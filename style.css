@@ -1,13 +1,28 @@
+html{
+  height: 100%;
+}
 body{
+  margin: 0;
+  padding: 0;
   font-family:sans-serif;
-      background-image: linear-gradient(to left, #444444 , #192023);
+  background-color: #192023;
+  height: 100%;
 }
 #Goodnight img{
   max-width:100%;
 }
 #Goodnight{
-  padding-top: 100px;
+  padding-top: 50px;
   margin: 0 auto;
-  min-width: 100px;
   max-width: 40em;
+}
+#bottom{
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#bottom img{
+  transform: translateY(60%);
+  max-width: 100%;
 }
