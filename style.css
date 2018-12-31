@@ -1,3 +1,13 @@
 body{
-  background-color: slategrey;
+  font-family:sans-serif;
+      background-image: linear-gradient(to left, #444444 , #192023);
+}
+#Goodnight img{
+  max-width:100%;
+}
+#Goodnight{
+  padding-top: 100px;
+  margin: 0 auto;
+  min-width: 100px;
+  max-width: 40em;
 }
