@@ -42,10 +42,18 @@ button:hover{
   z-index: 0;
   margin: 0 auto;
   text-align: center;
+<<<<<<< HEAD
 
+=======
+  position: fixed;
+>>>>>>> c30fbbd1a8889fd0d2c74fd2b64fe362f5f80032
   bottom: 0;
   width: 100%;
 }
 #bottom img{
+<<<<<<< HEAD
+=======
+  transform:translateY(80px);
+>>>>>>> c30fbbd1a8889fd0d2c74fd2b64fe362f5f80032
   max-width: 35rem;
 }
