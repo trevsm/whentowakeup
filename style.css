@@ -12,7 +12,7 @@ body{
 #Goodnight{
   padding-top: 1rem;
   margin: 0 auto;
-  max-width: 40em;
+  max-width: 30em;
 }
 #middle{
   padding-top:1rem;
@@ -39,11 +39,12 @@ button:hover{
 
 #bottom{
   margin: 0 auto;
+  text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 #bottom img{
-  transform:translateY(40px);
-  max-width: 100%;
+  transform:translateY(80px);
+  max-width: 35rem;
 }
