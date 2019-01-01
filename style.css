@@ -1,5 +1,5 @@
 body{
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family:sans-serif;
   background-color:#0e1217;
@@ -12,9 +12,10 @@ body{
 #Goodnight{
   padding-top: 1rem;
   margin: 0 auto;
-  max-width: 40em;
+  max-width: 30em;
 }
 #middle{
+  z-index: 1;
   padding-top:1rem;
   position: absolute;
   display: inline-block;
@@ -38,12 +39,13 @@ button:hover{
 }
 
 #bottom{
+  z-index: 0;
   margin: 0 auto;
-  position: fixed;
+  text-align: center;
+
   bottom: 0;
   width: 100%;
 }
 #bottom img{
-  transform:translateY(40px);
-  max-width: 100%;
+  max-width: 35rem;
 }
