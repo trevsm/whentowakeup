@@ -6,7 +6,8 @@ body{
   overflow: hidden;
 }
 .top{
-  position: fixed;
+  display: block;
+  top: 0;
   transform: translateY(-25px);
   display: flex;
   margin: 0 auto;
