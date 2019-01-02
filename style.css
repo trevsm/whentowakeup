@@ -3,11 +3,19 @@ body{
   padding: 0;
   font-family:sans-serif;
   background-color:#0e1217;
+<<<<<<< HEAD
+=======
+  overflow: hidden;
+>>>>>>> 150a7462b1f4b7eead9a55a80e176b80d43fec7d
 }
 .top{
   display: flex;
   margin: 0 auto;
+<<<<<<< HEAD
   padding-top: 15px;
+=======
+  margin-top: 15px;
+>>>>>>> 150a7462b1f4b7eead9a55a80e176b80d43fec7d
   width: 15rem;
 }
 .logo{
