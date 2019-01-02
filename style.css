@@ -1,11 +1,10 @@
 html, body{
-margin: 0;
-padding: 0;
-height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 body{
-
-  font-family:sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color:#0e1217;
   overflow: hidden;
 }
@@ -15,15 +14,8 @@ body{
   padding-top: 15px;
   width: 15rem;
 }
-.footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 15rem;
-}
 .logo{
+  z-index: 2;
   height: 100%;
 }
 .goodnight{
@@ -33,6 +25,50 @@ body{
   transform: translate(-10px,-5px);
   width: 25%;
 }
+.middle{
+  z-index: 2;
+  color:white;
+  font-size: 13pt;
+  text-align: center;
+  width: fit-content;
+  height: 0;
+  position:absolute;
+  margin: 0 auto;
+  bottom: 0;
+  top: 20%;
+  left: 0;
+  right: 0;
+}
+.middle>button{
+  margin: 0 auto;
+  background-color: #393E46;
+  border: none;
+  color: #FFF4E0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13pt;
+  cursor: pointer;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 15rem;
+}
 .footer>img{
+  z-index: -1;
   width: 100%;
+}
+#background {
+  z-index: 1;
+  opacity: .1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
