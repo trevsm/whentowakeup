@@ -6,17 +6,19 @@ body{
   overflow: hidden;
 }
 .top{
+  transform: translateY(-25px);
   display: flex;
   margin: 0 auto;
   max-width: 15rem;
 }
 .logo{
-  padding-right: 10px;
+  margin: 0;
+  padding: 0;
 }
 .goodnight{
   width: 85%;
 }
 .moon{
-  transform: translateY(-20px);
-  width: 10%;
+  transform: translate(-10px,-20px);
+  width: 25%;
 }
