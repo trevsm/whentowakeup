@@ -6,6 +6,7 @@ body{
   overflow: hidden;
 }
 .top{
+  position: fixed;
   transform: translateY(-25px);
   display: flex;
   margin: 0 auto;
