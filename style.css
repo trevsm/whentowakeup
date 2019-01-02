@@ -4,24 +4,20 @@ body{
   font-family:sans-serif;
   background-color:#0e1217;
   overflow: hidden;
-  height: 100%;
 }
 .top{
-  display: block;
-  top: 0;
-  transform: translateY(-25px);
   display: flex;
   margin: 0 auto;
-  max-width: 15rem;
+  margin-top: 15px;
+  width: 15rem;
 }
 .logo{
-  margin: 0;
-  padding: 0;
+  height: 100%;
 }
 .goodnight{
   width: 85%;
 }
 .moon{
-  transform: translate(-10px,-20px);
+  transform: translate(-10px,-5px);
   width: 25%;
 }
