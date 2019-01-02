@@ -14,39 +14,3 @@ body{
   margin: 0 auto;
   max-width: 30em;
 }
-#middle{
-  z-index: 1;
-  padding-top:1rem;
-  position: absolute;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-}
-button {
-  cursor:pointer;
-  font-size: 1.3rem;
-  background-color: #49636c;
-  margin: 20px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  transition: all .07s ease;
-}
-button:hover{
-  filter: brightness(.9);
-}
-
-#bottom{
-  z-index: 0;
-  margin: 0 auto;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-#bottom img{
-  transform:translateY(80px);
-  max-width: 35rem;
-}
