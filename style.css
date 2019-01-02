@@ -1,13 +1,26 @@
+html, body{
+margin: 0;
+padding: 0;
+height: 100%;
+}
 body{
-  margin: 0 auto;
-  padding: 0;
+
   font-family:sans-serif;
   background-color:#0e1217;
+  overflow: hidden;
 }
 .top{
   display: flex;
   margin: 0 auto;
   padding-top: 15px;
+  width: 15rem;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 15rem;
 }
 .logo{
@@ -19,10 +32,6 @@ body{
 .moon{
   transform: translate(-10px,-5px);
   width: 25%;
-}
-.footer{
-  width: 15rem;
-  margin: 0 auto;
 }
 .footer>img{
   width: 100%;
