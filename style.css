@@ -15,7 +15,7 @@ body{
   width: 15rem;
 }
 .logo{
-  z-index: 2;
+  z-index: 3;
   height: 100%;
 }
 .goodnight{
@@ -26,10 +26,11 @@ body{
   width: 25%;
 }
 .left{
+  border-right: 2.5px solid grey;
   float: left;
 }
 .right{
-  border-left: 5px solid grey;
+  border-left: 2.5px solid grey;
   float: right;
 }
 .left, .right{
@@ -41,10 +42,10 @@ padding: 20px;
   font-size: 13pt;
   text-align: center;
   width: fit-content;
-  height: 0;
+  height: fit-content;
   position:absolute;
-  margin: 0 auto;
   bottom: 0;
+  margin: 0 auto;
   top: 20%;
   left: 0;
   right: 0;
@@ -61,13 +62,31 @@ button{
   font-size: 13pt;
   cursor: pointer;
 }
+table{
+  width: fit-content;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-spacing: 5px;
+  text-align: center;
+  color: white;
+}
+td{
+  background-color: orange;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+}
 .footer{
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 15rem;
+  width: 20rem;
 }
 .footer>img{
   z-index: -1;
@@ -76,6 +95,7 @@ button{
 input{
   background-color:#eaeaea;
   border:none;
+  font-size: 1em;
 }
 #background {
   z-index: 1;
