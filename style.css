@@ -28,7 +28,7 @@ body{
   float: left;
 }
 .right{
-  border-left: 2.5px solid #FFF4E0;
+  border-left: 2.5px solid #353535;
   float: right;
 }
 .left, .right{
