@@ -62,6 +62,7 @@ button{
   cursor: pointer;
 }
 table{
+  cursor: default;
   width: fit-content;
   z-index: 2;
   position: absolute;
@@ -90,11 +91,15 @@ td{
   transform: translateY(30px);
 }
 .footer>img{
-  visibility: hidden;
+  opacity: 0;
   z-index: -1;
   width: 100%;
 }
+.hit{
+  cursor: pointer;
+}
 .fireloader{
+  opacity: 1;
   position: absolute;
   width: 300px;
   margin: 0 auto;
@@ -102,6 +107,14 @@ td{
   right: 0;
   left: 0;
   z-index: 3;
+}
+@media only screen and (max-width: 400px) {
+    .fireloader {
+        opacity: 0;
+    }
+    .footer>img{
+      opacity: 1;
+    }
 }
 input{
   background-color:#eaeaea;
