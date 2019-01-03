@@ -91,7 +91,7 @@ td{
   transform: translateY(30px);
 }
 .footer>img{
-  opacity: 0;
+  opacity: 1;
   z-index: -1;
   width: 100%;
 }
@@ -99,7 +99,7 @@ td{
   cursor: pointer;
 }
 .fireloader{
-  opacity: 1;
+  opacity: 0;
   position: absolute;
   width: 300px;
   margin: 0 auto;
@@ -108,14 +108,14 @@ td{
   left: 0;
   z-index: 3;
 }
-@media only screen and (max-width: 400px) {
+/*@media only screen and (max-width: 400px) {
     .fireloader {
         opacity: 0;
     }
     .footer>img{
       opacity: 1;
     }
-}
+}*/
 input{
   background-color:#eaeaea;
   border:none;
