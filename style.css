@@ -87,6 +87,7 @@ td{
   right: 0;
   margin: 0 auto;
   width: 20rem;
+  transform: translateY(30px);
 }
 .footer>img{
   z-index: -1;
