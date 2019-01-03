@@ -6,7 +6,6 @@ html, body{
 body{
   font-family: 'Open Sans', sans-serif;
   background-color:#0e1217;
-  overflow-y: hidden;
 }
 .top{
   display: flex;
