@@ -39,21 +39,26 @@
     <video autoplay muted loop class="background">
       <source src="videos/stars.webm" type="video/webm">
       </video>
-    <div class="top">
+    <div class="top center">
       <img class="logo goodnight" src="images/goodnight.svg" alt="Goodnight">
       <img class="logo moon" src="images/moon.svg" alt="Moon">
     </div>
-    <div class="middle">
+    <div class="middle center">
       <div class="left">
         <p>Choose Bedtime:</p>
-        <input type="time" name="" value="">
+        <input type="time" class="bedTime"
+        onchange="updateBedTime();">
       </div>
       <div class="right">
         <p>Time to wake up:</p>
-        <input type="time" name="" value="">
+        <input type="time" class="bedTime" value="07:00"
+        onchange="updateWakeTime();">
       </div>
     </div>
-    <table class="times">
+    <div class="sleepNote">
+      <p>wake up at one of these times</p>
+    </div>
+    <table class="times center">
       <tr>
         <td>04:30</td>
         <td>06:00</td>
@@ -68,6 +73,26 @@
     <div class="footer">
       <img class="fire" src="images/fire.gif" alt="crackling fire vector gif">
     </div>
+
+    <script type="text/javascript">
+    var now = new Date().toLocaleTimeString('en-US', { hour12: false,
+                                             hour: "numeric",
+                                             minute: "numeric"});
+
+    var bedTime = document.querySelector('.bedTime');
+    var wakeTime = document.querySelector('.wakeTime');
+    var timeTable = document.querySelector('times');
+
+    bedTime.value = now;
+    function updateBedTime(){
+      console.log(bedTime.value);
+    }
+    function updateWakeTime(){
+      console.log(wakeTime.value);
+    }
+
+    </script>
+
   </body>
 
 </html>
