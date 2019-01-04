@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="description" content="Discover the perfect time wake up in the morning feeling rested." />
-    <link rel="stylesheet" href="style.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Calculate the best </title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72583143-2"></script>
     <script>
@@ -18,50 +32,15 @@
       gtag('config', 'UA-72583143-2');
 
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-THXZHZJ');
-
-    </script>
-    <!-- End Google Tag Manager -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <title>When to wake up</title>
-
+    <!-- END - Google Analytics -->
   </head>
-
-  <body scroll="no" style="overflow: hidden">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THXZHZJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <video autoplay muted loop id="background">
-      <source src="stars.webm" type="video/webm">
+  <body>
+    <video autoplay muted loop class="background">
+      <source src="videos/stars.webm" type="video/webm">
     </video>
     <div class="top">
-      <img class="logo goodnight" src="goodnight.svg" alt="Goodnight">
-      <img class="logo moon" src="moon.svg" alt="Moon">
+      <img class="logo goodnight" src="images/goodnight.svg" alt="Goodnight">
+      <img class="logo moon" src="images/moon.svg" alt="Moon">
     </div>
     <div class="middle">
       <div class="left">
@@ -73,7 +52,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="time" name="" value="">
       </div>
     </div>
-    <table>
+    <table class="times">
       <tr>
         <td>04:30</td>
         <td>06:00</td>
@@ -86,40 +65,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </tr>
     </table>
     <div class="footer">
-      <img class="fire" src="fire.gif" alt="">
+      <img class="fire" src="images/fire.gif" alt="">
     </div>
-    <div class="fireloader">
-      <svg class="flameSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <rect  class="flame" x="400" y="310" width="5" height="5" rx="0.5"  ry="0.5" fill="#FFDD02"/>
-          <circle class="spark" cx="400" cy="300" r="0.05" fill="#FFDD02"/>
-          <filter id="shadow" x="-100%" y="-100%" width="250%" height="250%">
-            <feOffset in="SourceAlpha" dx="4" dy="4" result="offsetOut"></feOffset>
-            <feGaussianBlur stdDeviation="3" in="offsetOut" result="drop" />
-            <feOffset dx="0" dy="0" result="offsetblur"></feOffset>
-            <feFlood id="glowAlpha" flood-color="#0F1217" flood-opacity="0.42"></feFlood>
-            <feComposite in2="offsetblur" operator="in"></feComposite>
-            <feMerge>
-              <feMergeNode/>
-          <feMergeNode in="SourceGraphic"></feMergeNode>
-        </feMerge>
-      </filter>
-      </defs>
-      <g class="flameContainer" />
-      <g class="sparksContainer" />
-        <g class="logs" opacity="1">
-          <g class="whole">
-          <path filter="url(#shadow)" d="M349.2,296l2.34-8.69a3,3,0,0,1,3.68-2.12l91.46,29.22A3,3,0,0,1,448.8,318l-2.34,8.69a3,3,0,0,1-3.68,2.12l-91.46-29.22A3,3,0,0,1,349.2,296Z" fill="#70392f"/>
-          <path d="M446.68,299.63l-91.46,29.22a3,3,0,0,1-3.68-2.12L349.2,318a3,3,0,0,1,2.12-3.68l91.46-29.22a3,3,0,0,1,3.68,2.12L448.8,296A3,3,0,0,1,446.68,299.63Z" fill="#612e25"/>
-        </g>
-         </g>
-         <rect class="hit" width="200" height="260" x="300" y="230" fill="transparent">
-         </rect>
-       </svg>
-    </div>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
-    <script src='js/CustomEase.min.js'></script>
-    <script src="js/index.js"></script>
   </body>
 
 </html>
