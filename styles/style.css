@@ -9,6 +9,12 @@ body{
   padding: 0;
   height: 100%;
 }
+/****** General ******/
+input[type=time]::-webkit-inner-spin-button,
+input[type=time]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /****** header ******/
 .top{
   display: flex;
@@ -28,16 +34,16 @@ body{
   width: 25%;
 }
 
-/****** main content ******/
+/****** middle content ******/
 .middle{
+  display: flex;
   z-index: 2;
   color:white;
   font-size: 13pt;
   text-align: center;
   max-width: fit-content;
-  min-width: 360px;
   height: fit-content;
-  position:absolute;
+  position: absolute;
   bottom: 0;
   margin: 0 auto;
   top: 20%;
@@ -45,19 +51,37 @@ body{
   right: 0;
 }
 .left, .right{
-padding: 20px;
+  height: fit-content;
+  padding: 20px;
 }
-.left{
-  float: left;
+.middle p{
+  margin: 0 0 20px 0;
 }
 .right{
-  border-left: 2.5px solid #353535;
-  float: right;
+  border-left: 2.5px solid grey;
 }
 .middle input{
+  width: 58%;
   background-color:#eaeaea;
   border:none;
   font-size: 17px;
+}
+.middle button{
+  font-size: 17px;
+  cursor: pointer;
+  border:none;
+  width: 58%;
+  top: 50%;
+  height: 25px;
+}
+.middle button:hover{
+  background-color: lightgrey;
+}
+.middle button:active{
+  background-color: #b2b2b2;
+}
+.middle button:focus{
+  outline:0;
 }
 /****** Time Table ******/
 .times{
@@ -72,7 +96,6 @@ padding: 20px;
   right: 0;
   top: 50%;
   border-spacing: 10px;
-    border-collapse: separate;
   text-align: center;
   color: white;
 }

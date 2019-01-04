@@ -33,7 +33,9 @@
       gtag('config', 'UA-72583143-2');
 
     </script>
+
     <!-- END - Google Analytics -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <video autoplay muted loop class="background">
@@ -46,13 +48,13 @@
     <div class="middle center">
       <div class="left">
         <p>Choose Bedtime:</p>
-        <input type="time" class="bedTime"
-        onchange="updateBedTime();">
+        <input type="time" class="bedTime">
+        <button type="button" name="button" class="btn1">update</button>
       </div>
       <div class="right">
         <p>Time to wake up:</p>
-        <input type="time" class="bedTime" value="07:00"
-        onchange="updateWakeTime();">
+        <input type="time" class="wakeTime" value="07:00">
+        <button type="button" name="button" class="btn2">update</button>
       </div>
     </div>
     <div class="sleepNote">
@@ -75,21 +77,28 @@
     </div>
 
     <script type="text/javascript">
-    var now = new Date().toLocaleTimeString('en-US', { hour12: false,
-                                             hour: "numeric",
-                                             minute: "numeric"});
+
+    var now = new Date();
 
     var bedTime = document.querySelector('.bedTime');
-    var wakeTime = document.querySelector('.wakeTime');
-    var timeTable = document.querySelector('times');
+    bedTime.value = now.getHours() + ":" + now.getMinutes();
 
-    bedTime.value = now;
-    function updateBedTime(){
-      console.log(bedTime.value);
-    }
-    function updateWakeTime(){
-      console.log(wakeTime.value);
-    }
+    var wakeTime = document.querySelector('.wakeTime');
+    var button1 = document.querySelector('.btn1');
+    var button2 = document.querySelector('.btn2');
+    var HH, MM;
+    button1.addEventListener("click", function(){
+      HH = bedTime.value.split(":")[0];
+      MM = bedTime.value.split(":")[1];
+
+      console.log("updated bedtime " + HH + ":" + MM);
+    });
+    button2.addEventListener("click", function(){
+      HH = wakeTime.value.split(":")[0];
+      MM = wakeTime.value.split(":")[1];
+      console.log("updated wakeTime " + HH + ":" + MM);
+    });
+
 
     </script>
 
