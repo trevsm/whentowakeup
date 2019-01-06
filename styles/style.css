@@ -27,7 +27,6 @@ body{
   width: 250px;
   margin: 0 auto;
 }
-
 /****** middle ******/
 .middle{
   position: absolute;
@@ -37,5 +36,22 @@ body{
 }
 .middle .clock{
   width: 28rem;
+  margin: 0px 36px;
+}
+/****** 24HourClockJS ******/
+.handle{
+  fill:#FFF;
+  stroke:#000;
+  stroke-width:0;
+  cursor: pointer;
+}
+.ring{
+  fill:none;
+  stroke:#a8a8a8;
+  stroke-width:1;
+}
+.ring-input{
+  transform: translateY(-490px);
+  pointer-events: auto;
 }
 /****** footer ******/
