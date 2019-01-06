@@ -38,70 +38,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <video autoplay muted loop class="background">
-      <source src="videos/stars.webm" type="video/webm">
-      </video>
-    <div class="top center">
-      <img class="logo goodnight" src="images/goodnight.svg" alt="Goodnight">
-      <img class="logo moon" src="images/moon.svg" alt="Moon">
+    <div class="top userDisable">
+      <img src="images/logo.svg" alt="goodnight moon">
     </div>
-    <div class="middle center">
-      <div class="left">
-        <p>Choose Bedtime:</p>
-        <input type="time" class="bedTime">
-        <button type="button" name="button" class="btn1">update</button>
-      </div>
-      <div class="right">
-        <p>Time to wake up:</p>
-        <input type="time" class="wakeTime" value="07:00">
-        <button type="button" name="button" class="btn2">update</button>
-      </div>
+    <div class="middle userDisable">
+      <img src="images/24-hour-clock.svg" alt="" class="clock">
     </div>
-    <div class="sleepNote">
-      <p>wake up at one of these times</p>
-    </div>
-    <table class="times center">
-      <tr>
-        <td>04:30</td>
-        <td>06:00</td>
-        <td>07:30</td>
-      </tr>
-      <tr>
-        <td>09:00</td>
-        <td>10:30</td>
-        <td>12:00</td>
-      </tr>
-    </table>
     <div class="footer">
-      <img class="fire" src="images/fire.gif" alt="crackling fire vector gif">
     </div>
 
     <script type="text/javascript">
-
-    var now = new Date();
-
-    var bedTime = document.querySelector('.bedTime');
-    bedTime.value = now.getHours() + ":" + now.getMinutes();
-
-    var wakeTime = document.querySelector('.wakeTime');
-    var button1 = document.querySelector('.btn1');
-    var button2 = document.querySelector('.btn2');
-    var HH, MM;
-    button1.addEventListener("click", function(){
-      HH = bedTime.value.split(":")[0];
-      MM = bedTime.value.split(":")[1];
-
-      console.log("updated bedtime " + HH + ":" + MM);
-    });
-    button2.addEventListener("click", function(){
-      HH = wakeTime.value.split(":")[0];
-      MM = wakeTime.value.split(":")[1];
-      console.log("updated wakeTime " + HH + ":" + MM);
-    });
-
-
+    
     </script>
-
   </body>
 
 </html>

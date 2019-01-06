@@ -2,129 +2,40 @@
   box-sizing: border-box;
 }
 body{
+  position: absolute;
   font-family: 'Open Sans', sans-serif;
   background-color:#0e1217;
-  justify-content: center;
+  background-color: #262626;
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 /****** General ******/
-input[type=time]::-webkit-inner-spin-button,
-input[type=time]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.userDisable{
+  pointer-events: none;
+  user-select: none;
 }
 /****** header ******/
 .top{
-  display: flex;
-  margin: 0 auto;
+  text-align: center;
   padding-top: 15px;
-  width: 15rem;
-}
-.logo{
-  z-index: 3;
-  height: 100%;
-}
-.goodnight{
-  width: 90%;
-}
-.moon{
-  transform: translate(-10px,-5px);
-  width: 25%;
-}
-
-/****** middle content ******/
-.middle{
-  display: flex;
-  z-index: 2;
-  color:white;
-  font-size: 13pt;
-  text-align: center;
-  max-width: fit-content;
-  height: fit-content;
-  position: absolute;
-  bottom: 0;
-  margin: 0 auto;
-  top: 20%;
-  left: 0;
-  right: 0;
-}
-.left, .right{
-  height: fit-content;
-  padding: 20px;
-}
-.middle p{
-  margin: 0 0 20px 0;
-}
-.right{
-  border-left: 2.5px solid grey;
-}
-.middle input{
-  width: 58%;
-  background-color:#eaeaea;
-  border:none;
-  font-size: 17px;
-}
-.middle button{
-  font-size: 17px;
-  cursor: pointer;
-  border:none;
-  width: 58%;
-  top: 50%;
-  height: 25px;
-}
-.middle button:hover{
-  background-color: lightgrey;
-}
-.middle button:active{
-  background-color: #b2b2b2;
-}
-.middle button:focus{
-  outline:0;
-}
-/****** Time Table ******/
-.times{
-  cursor: default;
-  max-width: fit-content;
-  min-width: 223px;
-  z-index: 2;
-  position: absolute;
-  bottom: 0;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  border-spacing: 10px;
-  text-align: center;
-  color: white;
-}
-.times td{
-  background-color: orange;
-  border-radius: 5px;
-  padding: 5px 10px 5px 10px;
-}
-/****** footer ******/
-.footer{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 20rem;
-  transform: translateY(30px);
-}
-.footer .fire{
-  opacity: 1;
-  z-index: -1;
   width: 100%;
 }
-.background {
-  z-index: 1;
-  opacity: .1;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+.top img{
+  width: 250px;
+  margin: 0 auto;
 }
+
+/****** middle ******/
+.middle{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+}
+.middle .clock{
+  width: 28rem;
+}
+/****** footer ******/
