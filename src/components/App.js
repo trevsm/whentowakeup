@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import "../../node_modules/d3";
 import "../styles/App.scss";
 import "../styles/Main.scss";
-import "../../node_modules/d3";
 
 class App extends Component {
   componentDidMount() {

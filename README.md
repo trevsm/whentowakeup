@@ -1,13 +1,3 @@
-React environment consisting of:
+When To Wake Up
 
--Webpack
--Reactjs
--Babel
--SCSS
-
-Does not use HtmlWebpackPlugin
-
-commands to run before using:
-"npm i node webpack-dev-server sass-loader node-sass webpack --save"
-"npm run build"
-"npm start"
+Calculate the perfect time to wake up in the morning feeling well rested and ready for the day! Zero Ads | Simple Aesthetic | Intuitive.
