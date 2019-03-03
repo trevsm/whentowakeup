@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../node_modules/d3";
+import "d3-interpolate";
 import "../styles/App.scss";
 import "../styles/Main.scss";
 
