@@ -8,16 +8,23 @@ class App extends Component {
     this.draw();
   }
   draw() {
+    var d = new Date();
+
     var displayTime = document.getElementsByClassName("display-time");
     const rad = 57.2957795;
-    var values = [{ value: 33 }];
+    var values = [{ value: 24 }];
     var time = [{ hh: 0, mm: 0 }];
     var total = 0;
     var dragging = true;
-
-    values[0].absoluteValue = total;
+    function updateTime(values) {
+      let hh = Math.floor(values);
+      let mm = Math.floor((values - hh) * 60);
+      displayTime[0].innerHTML =
+        ("0" + hh).slice(-2) + ":" + ("0" + mm).slice(-2);
+      return;
+    }
+    values[0].absoluteValue = d.getHours() + d.getMinutes() / 60;
     total += values[0].value;
-
     var height = 500,
       width = 500,
       margin = { top: 20, left: 20, bottom: 20, right: 20 };
@@ -95,7 +102,7 @@ class App extends Component {
         }
       });
     }
-
+    updateTime(values[0].absoluteValue);
     drawHandles();
 
     function dragmove(d, i) {
@@ -113,13 +120,7 @@ class App extends Component {
         newAngle = 360 + newAngle;
       }
       d.absoluteValue = angularScale.invert(newAngle);
-      //REDRAW HANDLES
-      time[0].hh = Math.floor(values[0].absoluteValue / (32 / 24));
-      time[0].mm = Math.floor(
-        ((values[0].absoluteValue / (32 / 24) - time[0].hh) * 100) / (100 / 60)
-      );
-      displayTime[0].innerHTML =
-        ("0" + time[0].hh).slice(-2) + ":" + ("0" + time[0].mm).slice(-2);
+      updateTime(values[0].absoluteValue);
       drawHandles();
     }
   }
@@ -133,6 +134,22 @@ class App extends Component {
           <img src="../images/24-hour-clock.svg" className="clock" />
           <div className="ring-input" />
           <div className="display-time">00:00</div>
+          <table>
+            <tbody>
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </>
     );
