@@ -13,9 +13,17 @@
 
 .ring {
   fill: none;
-  stroke: #000;
-  stroke-width: 0;
+  stroke: grey;
+  stroke-width: 1;
 }
-.ring-input {
-  // background-color: green;
+table {
+  tbody {
+    tr {
+      td {
+        width: 10px;
+        height: 10px;
+        background-color: pink;
+      }
+    }
+  }
 }

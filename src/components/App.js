@@ -8,29 +8,19 @@ class App extends Component {
     this.draw();
   }
   draw() {
-    var d = new Date();
-
-    var displayTime = document.getElementsByClassName("display-time");
+    let d = new Date();
+    let displayTime = document.getElementsByClassName("display-time");
+    let table = document.getElementsByTagName("table");
     const rad = 57.2957795;
-    var values = [{ value: 24 }];
-    var time = [{ hh: 0, mm: 0 }];
-    var total = 0;
-    var dragging = true;
-    function updateTime(values) {
-      let hh = Math.floor(values);
-      let mm = Math.floor((values - hh) * 60);
-      displayTime[0].innerHTML =
-        ("0" + hh).slice(-2) + ":" + ("0" + mm).slice(-2);
-      return;
-    }
-    values[0].absoluteValue = d.getHours() + d.getMinutes() / 60;
-    total += values[0].value;
-    var height = 500,
-      width = 500,
-      margin = { top: 20, left: 20, bottom: 20, right: 20 };
-    var radius = 300 / 2;
-
-    var parent = d3
+    let values = [{ value: 24 }];
+    let time = [{ hh: 0, mm: 0, ampm: "" }];
+    let total = 0;
+    let dragging = true;
+    let height = 500;
+    let width = 500;
+    let margin = { top: 20, left: 20, bottom: 20, right: 20 };
+    let radius = 300 / 2;
+    let parent = d3
       .select(".ring-input")
       .append("svg")
       .attr({
@@ -39,42 +29,37 @@ class App extends Component {
       })
       .append("g")
       .attr("transform", "translate(" + 100 + "," + 100 + ")");
+    function formatTime() {
+      let h;
+      let m;
+      let ampm = "am";
+      if (time.hh >= 12) {
+        h = time.hh - 12;
+        ampm = "PM";
+      }
+      if (h == 0) h = 12;
 
-    parent.append("line").attr("id", "test-line");
-
-    var angularScale = d3.scale
-      .linear()
-      .range([0, 360])
-      .domain([0, total]);
-
-    var ring = parent
-      .append("g")
-      .attr("id", "rim")
-      .attr("transform", "translate(" + radius + "," + radius + ")");
-    ring.append("circle").attr({
-      r: radius,
-      class: "ring"
-    });
-
-    var handles = parent
-      .append("g")
-      .attr("id", "handles")
-      .attr("transform", "translate(" + radius + "," + radius + ")");
-    var drag = d3.behavior
-      .drag()
-      .origin(function(d) {
-        return d;
-      })
-      .on("drag", dragmove)
-      .on("dragend", function() {
-        console.log("dragend");
-        dragging = true;
-        d3.select(this).classed("active", false);
-      });
-
-    //position the handles based on the input values
+      m = m < 10 ? "0" + m : m;
+    }
+    function updateTime(values) {
+      time.hh = Math.floor(values);
+      time.mm = Math.floor((values - time.hh) * 60);
+      if (time.hh >= 12) {
+        time.ampm = "PM";
+      } else if (time.hh < 12) {
+        time.ampm = "AM";
+      }
+      if (time.hh % 12 == 0) {
+        time.hh = 12;
+      } else {
+        time.hh = time.hh % 12;
+      }
+      displayTime[0].innerHTML =
+        time.hh + ":" + ("0" + time.mm).slice(-2) + " " + time.ampm;
+      return;
+    }
     function drawHandles() {
-      var join = handles.selectAll("circle").data(values);
+      let join = handles.selectAll("circle").data(values);
       join
         .enter()
         .append("circle")
@@ -102,6 +87,46 @@ class App extends Component {
         }
       });
     }
+    function updateGrid() {
+      for (var i = 0; i < 8; i++) {
+        let j = Math.floor(i / 4);
+        table[0].rows[j].cells[i % 4].innerHTML = (i + 1) * 90;
+      }
+    }
+    updateGrid();
+    values[0].absoluteValue = d.getHours() + d.getMinutes() / 60;
+    total += values[0].value;
+    parent.append("line").attr("id", "test-line");
+
+    let angularScale = d3.scale
+      .linear()
+      .range([0, 360])
+      .domain([0, total]);
+    let ring = parent
+      .append("g")
+      .attr("id", "rim")
+      .attr("transform", "translate(" + radius + "," + radius + ")");
+    ring.append("circle").attr({
+      r: radius,
+      class: "ring"
+    });
+
+    let handles = parent
+      .append("g")
+      .attr("id", "handles")
+      .attr("transform", "translate(" + radius + "," + radius + ")");
+    let drag = d3.behavior
+      .drag()
+      .origin(function(d) {
+        return d;
+      })
+      .on("drag", dragmove)
+      .on("dragend", function() {
+        console.log("dragend");
+        dragging = true;
+        d3.select(this).classed("active", false);
+      });
+
     updateTime(values[0].absoluteValue);
     drawHandles();
 
@@ -112,10 +137,10 @@ class App extends Component {
       }
 
       d3.select(this).classed("active", true);
-      var coordinates = d3.mouse(parent.node());
-      var x = coordinates[0] - radius;
-      var y = coordinates[1] - radius;
-      var newAngle = Math.atan2(y, x) * rad;
+      let coordinates = d3.mouse(parent.node());
+      let x = coordinates[0] - radius;
+      let y = coordinates[1] - radius;
+      let newAngle = Math.atan2(y, x) * rad;
       if (newAngle < 0) {
         newAngle = 360 + newAngle;
       }

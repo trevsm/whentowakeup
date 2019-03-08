@@ -1,54 +1,56 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   position: absolute;
-  font-family: "Open Sans", sans-serif;
-  background-color: #0e1217;
-  background-color: #262626;
+  width: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  // overflow: hidden;
+  overflow-y: hidden;
+  background-color: #0e1217;
+  background-color: #262626;
+  font-family: "Open Sans", sans-serif;
 }
-/****** General ******/
-// .userDisable {
-//   pointer-events: none;
-//   user-select: none;
-// }
-/****** header ******/
+
+/* **** header ***** */
+
 .top {
-  text-align: center;
-  padding-top: 15px;
   width: 100%;
+  padding-top: 15px;
+  text-align: center;
+
   img {
-    max-width: 250px;
     width: 60vw;
+    max-width: 250px;
     margin: 0 auto;
   }
 }
-/****** middle ******/
+
+/* **** middle ***** */
+
 .middle {
-  width: 100vw;
-  text-align: center;
-  margin-top: 5%;
   position: relative;
+  margin-top: 5%;
+  text-align: center;
+
   .clock {
     width: 80vw;
     max-width: 450px;
   }
 }
-/****** 24HourClockJS ******/
+
+/* **** 24HourClockJS ***** */
+
 .ring-input {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  transform: translate(3px, -25px) scale(1.45) rotate(-90deg);
+  transform: translate(3px, -27px) scale(1.45) rotate(-90deg);
 }
 
 .display-time {
-  font-size: 20pt;
   color: white;
+  font-size: 20pt;
 }
