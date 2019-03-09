@@ -12,7 +12,14 @@ class App extends Component {
     let displayTime = document.getElementsByClassName("display-time");
     let table = document.getElementsByTagName("table");
     const rad = 57.2957795;
-    let values = [{ value: 24 }];
+    let values = [
+      { value: 24 },
+      { value: 24 },
+      { value: 24 },
+      { value: 24 },
+      { value: 24 },
+      { value: 24 }
+    ];
     let time = [{ hh: 0, mm: 0, ampm: "" }];
     let total = 0;
     let dragging = true;
@@ -29,18 +36,6 @@ class App extends Component {
       })
       .append("g")
       .attr("transform", "translate(" + 100 + "," + 100 + ")");
-    function formatTime() {
-      let h;
-      let m;
-      let ampm = "am";
-      if (time.hh >= 12) {
-        h = time.hh - 12;
-        ampm = "PM";
-      }
-      if (h == 0) h = 12;
-
-      m = m < 10 ? "0" + m : m;
-    }
     function updateTime(values) {
       time.hh = Math.floor(values);
       time.mm = Math.floor((values - time.hh) * 60);
@@ -88,13 +83,16 @@ class App extends Component {
       });
     }
     function updateGrid() {
-      for (var i = 0; i < 8; i++) {
-        let j = Math.floor(i / 4);
-        table[0].rows[j].cells[i % 4].innerHTML = (i + 1) * 90;
+      for (var i = 0; i < 6; i++) {
+        let j = Math.floor(i / 3);
+        table[0].rows[j].cells[i % 3].innerHTML = ((i + 1) * 90) / 60;
       }
     }
     updateGrid();
-    values[0].absoluteValue = d.getHours() + d.getMinutes() / 60;
+    for (var i = 0; i < values.length; i++) {
+      values[i].absoluteValue = d.getHours() + (d.getMinutes() + i * 90) / 60;
+    }
+
     total += values[0].value;
     parent.append("line").attr("id", "test-line");
 
@@ -133,6 +131,7 @@ class App extends Component {
     function dragmove(d, i) {
       if (dragging) {
         console.log("dragmove");
+        console.log(this);
         dragging = false;
       }
 
@@ -165,10 +164,8 @@ class App extends Component {
                 <td> </td>
                 <td> </td>
                 <td> </td>
-                <td> </td>
               </tr>
               <tr>
-                <td> </td>
                 <td> </td>
                 <td> </td>
                 <td> </td>

@@ -14,15 +14,20 @@
 .ring {
   fill: none;
   stroke: grey;
-  stroke-width: 1;
+  stroke-width: 0;
 }
 table {
+  margin: 0 auto;
+  border-collapse: separate;
+  //display: none;
   tbody {
     tr {
       td {
         width: 10px;
         height: 10px;
-        background-color: pink;
+        background-color: white;
+        padding: 10px 30px;
+        border-radius: 5px;
       }
     }
   }
