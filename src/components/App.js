@@ -12,14 +12,7 @@ class App extends Component {
     let displayTime = document.getElementsByClassName("display-time");
     let table = document.getElementsByTagName("table");
     const rad = 57.2957795;
-    let values = [
-      { value: 24 },
-      { value: 24 },
-      { value: 24 },
-      { value: 24 },
-      { value: 24 },
-      { value: 24 }
-    ];
+    let values = [{ value: 24 }];
     let time = [{ hh: 0, mm: 0, ampm: "" }];
     let total = 0;
     let dragging = true;
@@ -36,6 +29,10 @@ class App extends Component {
       })
       .append("g")
       .attr("transform", "translate(" + 100 + "," + 100 + ")");
+    function addMinutes(date, minutes) {
+      return new Date(date.getTime() + minutes * 60000);
+    }
+    function convertTo12() {}
     function updateTime(values) {
       time.hh = Math.floor(values);
       time.mm = Math.floor((values - time.hh) * 60);
@@ -51,7 +48,6 @@ class App extends Component {
       }
       displayTime[0].innerHTML =
         time.hh + ":" + ("0" + time.mm).slice(-2) + " " + time.ampm;
-      return;
     }
     function drawHandles() {
       let join = handles.selectAll("circle").data(values);
@@ -85,7 +81,21 @@ class App extends Component {
     function updateGrid() {
       for (var i = 0; i < 6; i++) {
         let j = Math.floor(i / 3);
-        table[0].rows[j].cells[i % 3].innerHTML = ((i + 1) * 90) / 60;
+        let d2 = addMinutes(d, (i + 1) * 90);
+        let hh = d2.getHours();
+        let mm = d2.getMinutes();
+        let ampm = "AM";
+        if (d2.getHours() >= 12) {
+          ampm = "PM";
+        } else if (time.hh < 12) {
+          ampm = "AM";
+        }
+        if (hh % 12 == 0) {
+          hh = 12;
+        } else {
+          hh = hh % 12;
+        }
+        table[0].rows[j].cells[i % 3].innerHTML = hh + ":" + mm + " " + ampm;
       }
     }
     updateGrid();
@@ -146,6 +156,7 @@ class App extends Component {
       d.absoluteValue = angularScale.invert(newAngle);
       updateTime(values[0].absoluteValue);
       drawHandles();
+      updateGrid();
     }
   }
   render() {
@@ -158,6 +169,7 @@ class App extends Component {
           <img src="../images/24-hour-clock.svg" className="clock" />
           <div className="ring-input" />
           <div className="display-time">00:00</div>
+          <h2>Wake up at the following times:</h2>
           <table>
             <tbody>
               <tr>
