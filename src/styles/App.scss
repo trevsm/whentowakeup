@@ -1,34 +1,58 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
-// font-family: 'Share Tech Mono', monospace;
-.display-time {
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 100;
-}
-.handle {
-  fill: #fff;
-  stroke: #000;
-  stroke-width: 0;
-  cursor: pointer;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono");
+
+// font-family: "Open Sans", sans-serif;
+
+// font-family: "Roboto Mono", monospace;
+
+* {
+  box-sizing: border-box;
 }
 
-.ring {
-  fill: none;
-  stroke: grey;
-  stroke-width: 0;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  text-align: center;
 }
-table {
+
+.display-time,
+.instruction,
+.logo,
+.wake-times {
   margin: 0 auto;
-  border-collapse: separate;
+}
+
+.logo {
+  width: 30vw;
+  min-width: 300px;
+  max-width: 400px;
+  margin-top: 30px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.instruction {
+  width: fit-content;
+  font-size: 20pt;
+}
+
+.wake-times {
+  width: fit-content;
+
   tbody {
     tr {
       td {
-        background-color: white;
-        padding: 10px 30px;
-        border-radius: 5px;
+        padding: 10px;
+        background-color: pink;
       }
     }
   }
 }
-h2 {
-  color: #ffffff26;
+
+.display-time {
+  width: fit-content;
+  padding-top: 40px;
+  font-size: 20px;
 }

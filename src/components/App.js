@@ -1,187 +1,71 @@
 import React, { Component } from "react";
-import "d3-interpolate";
 import "../styles/App.scss";
-import "../styles/Main.scss";
 
-class App extends Component {
-  componentDidMount() {
-    this.draw();
+function convertTime(date) {
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ampm = "AM";
+  if (hh >= 12) {
+    ampm = "PM";
   }
-  draw() {
-    let d = new Date();
-    let displayTime = document.getElementsByClassName("display-time");
-    let table = document.getElementsByTagName("table");
-    const rad = 57.2957795;
-    let values = [{ value: 24 }];
-    let time = [{ hh: 0, mm: 0, ampm: "" }];
-    let total = 0;
-    let dragging = true;
-    let height = 500;
-    let width = 500;
-    let margin = { top: 20, left: 20, bottom: 20, right: 20 };
-    let radius = 300 / 2;
-    let parent = d3
-      .select(".ring-input")
-      .append("svg")
-      .attr({
-        height: height,
-        width: width
-      })
-      .append("g")
-      .attr("transform", "translate(" + 100 + "," + 100 + ")");
-    function addMinutes(date, minutes) {
-      return new Date(date.getTime() + minutes * 60000);
-    }
-    function convertTo12() {}
-    function updateTime(values) {
-      time.hh = Math.floor(values);
-      time.mm = Math.floor((values - time.hh) * 60);
-      if (time.hh >= 12) {
-        time.ampm = "PM";
-      } else if (time.hh < 12) {
-        time.ampm = "AM";
-      }
-      if (time.hh % 12 == 0) {
-        time.hh = 12;
-      } else {
-        time.hh = time.hh % 12;
-      }
-      displayTime[0].innerHTML =
-        time.hh + ":" + ("0" + time.mm).slice(-2) + " " + time.ampm;
-    }
-    function drawHandles() {
-      let join = handles.selectAll("circle").data(values);
-      join
-        .enter()
-        .append("circle")
-        .attr({
-          r: 10,
-          class: "handle"
-        })
-        .on("mouseover", function() {
-          d3.select(this).classed("active", true);
-        })
-        .on("mouseout", function() {
-          d3.select(this).classed("active", false);
-        })
-        .call(drag);
+  if (hh == 0) {
+    hh = 1;
+  }
+  hh = hh % 12;
 
-      join.attr({
-        transform: function(d) {
-          return (
-            "rotate(" +
-            angularScale(d.absoluteValue) +
-            ") translate(" +
-            radius +
-            ",0)"
-          );
-        }
-      });
-    }
-    function updateGrid() {
-      for (var i = 0; i < 6; i++) {
-        let j = Math.floor(i / 3);
-        let d2 = addMinutes(d, (i + 1) * 90);
-        let hh = d2.getHours();
-        let mm = d2.getMinutes();
-        let ampm = "AM";
-        if (d2.getHours() >= 12) {
-          ampm = "PM";
-        } else if (time.hh < 12) {
-          ampm = "AM";
-        }
-        if (hh % 12 == 0) {
-          hh = 12;
-        } else {
-          hh = hh % 12;
-        }
-        table[0].rows[j].cells[i % 3].innerHTML = hh + ":" + mm + " " + ampm;
-      }
-    }
-    updateGrid();
-    for (var i = 0; i < values.length; i++) {
-      values[i].absoluteValue = d.getHours() + (d.getMinutes() + i * 90) / 60;
-    }
+  return hh + ":" + ("0" + mm).slice(-2) + " " + ampm;
+}
+function addMinutes(date, minutes) {
+  const newDate = new Date(date);
+  newDate.setMinutes(date.getMinutes() + minutes);
+  return newDate;
+}
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-    total += values[0].value;
-    parent.append("line").attr("id", "test-line");
-
-    let angularScale = d3.scale
-      .linear()
-      .range([0, 360])
-      .domain([0, total]);
-    let ring = parent
-      .append("g")
-      .attr("id", "rim")
-      .attr("transform", "translate(" + radius + "," + radius + ")");
-    ring.append("circle").attr({
-      r: radius,
-      class: "ring"
+    //initialize new Date as current date
+    let date = new Date();
+    this.state = {
+      date
+    };
+    this.tick = this.tick.bind(this);
+  }
+  componentDidMount() {
+    window.setInterval(this.tick, 500);
+  }
+  tick() {
+    const { date } = this.state;
+    const newDate = new Date();
+    //console.log(date.getSeconds());
+    this.setState({
+      date: newDate
     });
-
-    let handles = parent
-      .append("g")
-      .attr("id", "handles")
-      .attr("transform", "translate(" + radius + "," + radius + ")");
-    let drag = d3.behavior
-      .drag()
-      .origin(function(d) {
-        return d;
-      })
-      .on("drag", dragmove)
-      .on("dragend", function() {
-        console.log("dragend");
-        dragging = true;
-        d3.select(this).classed("active", false);
-      });
-
-    updateTime(values[0].absoluteValue);
-    drawHandles();
-
-    function dragmove(d, i) {
-      if (dragging) {
-        console.log("dragmove");
-        console.log(this);
-        dragging = false;
-      }
-
-      d3.select(this).classed("active", true);
-      let coordinates = d3.mouse(parent.node());
-      let x = coordinates[0] - radius;
-      let y = coordinates[1] - radius;
-      let newAngle = Math.atan2(y, x) * rad;
-      if (newAngle < 0) {
-        newAngle = 360 + newAngle;
-      }
-      d.absoluteValue = angularScale.invert(newAngle);
-      updateTime(values[0].absoluteValue);
-      drawHandles();
-      updateGrid();
-    }
   }
   render() {
+    let { date } = this.state;
+    let grid = [[1, 2, 3], [4, 5, 6]];
+    let count = 0;
+
     return (
       <>
-        <div className="top">
+        <div className="logo">
           <img src="../images/goodnight.svg" />
         </div>
         <div className="middle">
-          <img src="../images/24-hour-clock.svg" className="clock" />
-          <div className="ring-input" />
-          <div className="display-time">00:00</div>
-          <h2>Wake up at the following times:</h2>
-          <table>
+          <div className="display-time">{convertTime(date)}</div>
+          <h2 className="instruction">Wake up at the following times:</h2>
+          <table className="wake-times">
             <tbody>
-              <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-              </tr>
-              <tr>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-              </tr>
+              {grid.map(row => (
+                <tr key={row}>
+                  {row.map(cell => (
+                    <td key={cell}>
+                      {convertTime(addMinutes(date, 90 * cell.toString() + 15))}
+                    </td>
+                  ))}
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
