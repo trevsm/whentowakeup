@@ -4,6 +4,16 @@
 
 // font-family: "Roboto Mono", monospace;
 
+/* ---------Adobe Color CC------------------ */
+/* ---------Times Changing------------------ */
+$body-background: #a49a87;
+$instruction: #332532;
+$goodnight-logo: #644d52;
+$common-grid: #ff974f;
+$best-times: #f77a52;
+
+/* -----------General styling--------------- */
+
 * {
   box-sizing: border-box;
 }
@@ -11,10 +21,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: $body-background;
   text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
-
 .display-time,
 .instruction,
 .logo,
@@ -22,37 +32,57 @@ body {
   margin: 0 auto;
 }
 
+/* ----------Goodnight Logo------------------- */
+
 .logo {
   width: 30vw;
   min-width: 300px;
   max-width: 400px;
   margin-top: 30px;
-
   img {
     width: 100%;
   }
 }
 
-.instruction {
-  width: fit-content;
-  font-size: 20pt;
-}
-
-.wake-times {
-  width: fit-content;
-
-  tbody {
-    tr {
-      td {
-        padding: 10px;
-        background-color: pink;
-      }
-    }
-  }
-}
+/* ---------Current Time Display------------ */
 
 .display-time {
   width: fit-content;
-  padding-top: 40px;
-  font-size: 20px;
+  margin-top: 40px;
+  color: $goodnight-logo;
+  font-size: 20pt;
+  padding: 40px 10px;
+  border-radius: 100%;
+  box-shadow: 0 1px 10px 1px #37474f73;
+}
+
+/* ------------Wake up at...-------------- */
+
+.instruction {
+  width: 50vw;
+  min-width: 200px;
+  color: $instruction;
+  font-size: 15pt;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ------Grid of possible wake times------ */
+
+.wake-times {
+  width: fit-content;
+  td {
+    padding: 5px;
+  }
+}
+.table-data {
+  padding: 10px;
+  color: white;
+  min-width: 100px;
+  border-radius: 5px;
+  background-color: $common-grid;
+  font-family: "Roboto Mono", monospace;
+}
+.best {
+  background-color: $best-times;
 }

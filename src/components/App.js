@@ -54,14 +54,20 @@ class App extends Component {
         </div>
         <div className="middle">
           <div className="display-time">{convertTime(date)}</div>
-          <h2 className="instruction">Wake up at the following times:</h2>
+          <h2 className="instruction">
+            If you go to bed now, <br /> Wake up at one of these times:
+          </h2>
           <table className="wake-times">
             <tbody>
               {grid.map(row => (
                 <tr key={row}>
                   {row.map(cell => (
                     <td key={cell}>
-                      {convertTime(addMinutes(date, 90 * cell.toString() + 15))}
+                      <div
+                        className={cell > 4 ? "table-data best" : "table-data"}
+                      >
+                        {convertTime(addMinutes(date, 90 * cell + 15))}
+                      </div>
                     </td>
                   ))}
                 </tr>
