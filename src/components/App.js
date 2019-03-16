@@ -49,14 +49,12 @@ class App extends Component {
 
     return (
       <>
-        <div className="logo">
+        <header className="logo">
           <img src="../images/goodnight.svg" />
-        </div>
-        <div className="middle">
-          <div className="display-time">{convertTime(date)}</div>
-          <h2 className="instruction">
-            If you go to bed now, <br /> Wake up at one of these times:
-          </h2>
+        </header>
+        <section className="middle">
+          <div className="display-time box-shadow">{convertTime(date)}</div>
+          <p className="instruction">Wake up at one of these times:</p>
           <table className="wake-times">
             <tbody>
               {grid.map(row => (
@@ -74,7 +72,10 @@ class App extends Component {
               ))}
             </tbody>
           </table>
-        </div>
+        </section>
+        <footer>
+          <div> </div>
+        </footer>
       </>
     );
   }

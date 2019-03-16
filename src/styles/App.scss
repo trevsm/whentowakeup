@@ -4,11 +4,10 @@
 
 // font-family: "Roboto Mono", monospace;
 
-/* ---------Adobe Color CC------------------ */
-/* ---------Times Changing------------------ */
 $body-background: #a49a87;
-$instruction: #332532;
-$goodnight-logo: #644d52;
+$display-time: #847463;
+$time-background: #b79f86;
+$goodnight-logo: #405952;
 $common-grid: #ff974f;
 $best-times: #f77a52;
 
@@ -24,12 +23,16 @@ body {
   background-color: $body-background;
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  color: #333;
 }
 .display-time,
 .instruction,
 .logo,
 .wake-times {
   margin: 0 auto;
+}
+.box-shadow {
+  box-shadow: 2px 2px 6px #37474f73;
 }
 
 /* ----------Goodnight Logo------------------- */
@@ -47,13 +50,13 @@ body {
 /* ---------Current Time Display------------ */
 
 .display-time {
+  background-color: $time-background;
   width: fit-content;
   margin-top: 40px;
-  color: $goodnight-logo;
+  color: $display-time;
   font-size: 20pt;
   padding: 40px 10px;
   border-radius: 100%;
-  box-shadow: 0 1px 10px 1px #37474f73;
 }
 
 /* ------------Wake up at...-------------- */
@@ -61,7 +64,6 @@ body {
 .instruction {
   width: 50vw;
   min-width: 200px;
-  color: $instruction;
   font-size: 15pt;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -77,7 +79,6 @@ body {
 }
 .table-data {
   padding: 10px;
-  color: white;
   min-width: 100px;
   border-radius: 5px;
   background-color: $common-grid;
