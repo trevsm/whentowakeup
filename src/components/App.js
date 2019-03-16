@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Fire from "./Fire.js";
 import "../styles/App.scss";
 
 function convertTime(date) {
@@ -74,7 +75,7 @@ class App extends Component {
           </table>
         </section>
         <footer>
-          <div> </div>
+          <Fire className="fireLoader" />
         </footer>
       </>
     );

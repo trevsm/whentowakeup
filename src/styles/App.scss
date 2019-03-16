@@ -4,10 +4,10 @@
 
 // font-family: "Roboto Mono", monospace;
 
-$body-background: #a49a87;
-$display-time: #847463;
-$time-background: #b79f86;
-$goodnight-logo: #405952;
+$body-background: grey;
+$display-time: #ffffff24;
+$time-background: #b79f862e;
+$goodnight-logo: #f5f74f;
 $common-grid: #ff974f;
 $best-times: #f77a52;
 
@@ -65,7 +65,7 @@ body {
   width: 50vw;
   min-width: 200px;
   font-size: 15pt;
-  margin-top: 20px;
+  margin-top: 70px;
   margin-bottom: 20px;
 }
 
@@ -78,6 +78,7 @@ body {
   }
 }
 .table-data {
+  border: 1px solid #00000061;
   padding: 10px;
   min-width: 100px;
   border-radius: 5px;
