@@ -12,7 +12,7 @@ function convertTime(date) {
   if (hh == 0) {
     hh = 12;
   }
-  hh = hh % 13;
+  hh = hh % 12;
   return hh + ":" + ("0" + mm).slice(-2) + " " + ampm;
 }
 function addMinutes(date, minutes) {
@@ -37,7 +37,7 @@ class App extends Component {
   tick() {
     const { date } = this.state;
     const newDate = new Date();
-    //console.log(date.getSeconds());
+    console.log(date.getSeconds());
     this.setState({
       date: newDate
     });
