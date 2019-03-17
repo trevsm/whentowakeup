@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Contact from "./Contact";
 import "../styles/App.scss";
 
 function convertTime(date) {
@@ -43,9 +44,8 @@ class App extends Component {
   }
   render() {
     let { date } = this.state;
-    let grid = [[1, 2, 3], [4, 5, 6]];
+    const grid = [[1, 2, 3], [4, 5, 6]];
     let count = 0;
-
     return (
       <>
         <header className="logo">
@@ -53,6 +53,18 @@ class App extends Component {
         </header>
         <section className="middle">
           <div className="display-time box-shadow">
+            <div
+              className="clock-hand"
+              style={{
+                transform:
+                  "translate(60px, -25px) rotate(" +
+                  date.getSeconds() * 6 +
+                  "deg)"
+              }}
+            >
+              <div className="dark" />
+              <div className="transparent" />
+            </div>
             {convertTime(date)} <br />
             <span className="seconds box-shadow-inset">
               {("0" + date.getSeconds()).slice(-2)}
@@ -83,6 +95,7 @@ class App extends Component {
             <img src="../images/arrows.svg" />
           </div>
         </section>
+        <Contact />
       </>
     );
   }
