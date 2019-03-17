@@ -50,7 +50,10 @@ body {
     width: 100%;
   }
 }
-
+/* ---------Middle section------------ */
+.middle {
+  transform: translateY(-20px);
+}
 /* ---------Current Time Display------------ */
 
 .display-time {
@@ -76,10 +79,22 @@ body {
   color: $instruction;
   width: 280px;
   font-size: 15pt;
-  margin-top: 70px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
-
+.arrows {
+  display: flex;
+  margin: 0 auto;
+  width: 320px;
+  img {
+    width: 60%;
+    transform: translateY(-20px);
+  }
+  p {
+    color: #333;
+    width: 35%;
+  }
+}
 /* ------Grid of possible wake times------ */
 
 .wake-times {

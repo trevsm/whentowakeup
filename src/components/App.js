@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Fire from "./Fire.js";
 import "../styles/App.scss";
 
 function convertTime(date) {
@@ -60,7 +59,7 @@ class App extends Component {
             </span>
           </div>
           <p className="instruction">
-            If you go to sleep now, wake up at one of these times:
+            If you go to sleep now, wake up at any of these times...
           </p>
           <table className="wake-times">
             <tbody>
@@ -79,10 +78,11 @@ class App extends Component {
               ))}
             </tbody>
           </table>
+          <div className="arrows">
+            <p>...Or these times for the best sleep</p>
+            <img src="../images/arrows.svg" />
+          </div>
         </section>
-        <footer>
-          <Fire className="fireLoader" />
-        </footer>
       </>
     );
   }
