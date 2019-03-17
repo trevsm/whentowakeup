@@ -32,12 +32,12 @@ class App extends Component {
     this.tick = this.tick.bind(this);
   }
   componentDidMount() {
-    window.setInterval(this.tick, 500);
+    window.setInterval(this.tick, 50);
   }
   tick() {
     const { date } = this.state;
     const newDate = new Date();
-    console.log(date.getSeconds());
+    //console.log(date.getSeconds());
     this.setState({
       date: newDate
     });
@@ -53,8 +53,15 @@ class App extends Component {
           <img src="../images/goodnight.svg" />
         </header>
         <section className="middle">
-          <div className="display-time box-shadow">{convertTime(date)}</div>
-          <p className="instruction">Wake up at one of these times:</p>
+          <div className="display-time box-shadow">
+            {convertTime(date)} <br />
+            <span className="seconds box-shadow-inset">
+              {("0" + date.getSeconds()).slice(-2)}
+            </span>
+          </div>
+          <p className="instruction">
+            If you go to sleep now, wake up at one of these times:
+          </p>
           <table className="wake-times">
             <tbody>
               {grid.map(row => (

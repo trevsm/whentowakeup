@@ -4,10 +4,11 @@
 
 // font-family: "Roboto Mono", monospace;
 
-$body-background: grey;
-$display-time: #ffffff24;
+$body-background: #dadada;
+$display-time: #7f7f7fc4;
 $time-background: #b79f862e;
-$goodnight-logo: #f5f74f;
+$goodnight-logo: #38f3bb;
+$instruction: #7f7f7fc4;
 $common-grid: #ff974f;
 $best-times: #f77a52;
 
@@ -33,6 +34,9 @@ body {
 }
 .box-shadow {
   box-shadow: 2px 2px 6px #37474f73;
+}
+.box-shadow-inset {
+  box-shadow: inset 2px 2px 6px #37474f73;
 }
 
 /* ----------Goodnight Logo------------------- */
@@ -60,12 +64,17 @@ body {
   padding-top: 40px;
   border-radius: 100%;
 }
-
+.seconds {
+  color: #93929152;
+  border-radius: 100%;
+  padding: 2px 5px;
+  font-size: 15pt;
+}
 /* ------------Wake up at...-------------- */
 
 .instruction {
-  width: 50vw;
-  min-width: 200px;
+  color: $instruction;
+  width: 280px;
   font-size: 15pt;
   margin-top: 70px;
   margin-bottom: 20px;
@@ -80,7 +89,6 @@ body {
   }
 }
 .table-data {
-  border: 1px solid #00000061;
   padding: 10px;
   min-width: 100px;
   border-radius: 5px;
