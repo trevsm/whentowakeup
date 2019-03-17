@@ -13,7 +13,7 @@ function convertTime(date) {
   if (hh == 0) {
     hh = 12;
   }
-  return hh + ":" + ("0" + mm).slice(-2) + " " + ampm;
+  return hh + ":" + ("0" + mm).slice(-2) + ampm;
 }
 function addMinutes(date, minutes) {
   const newDate = new Date(date);
@@ -65,10 +65,10 @@ class App extends Component {
               <div className="dark" />
               <div className="transparent" />
             </div>
-            {convertTime(date)} <br />
-            <span className="seconds box-shadow-inset">
+            <h2>{convertTime(date)}</h2>
+            <div className="seconds box-shadow-inset">
               {("0" + date.getSeconds()).slice(-2)}
-            </span>
+            </div>
           </div>
           <p className="instruction">
             If you go to sleep now, wake up at any of these times...
