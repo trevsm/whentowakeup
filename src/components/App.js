@@ -91,7 +91,7 @@ class App extends Component {
             </tbody>
           </table>
           <div className="arrows">
-            <p>...Or these times for the best sleep</p>
+            <p>... Or these times for the best sleep</p>
             <img src="../images/arrows.svg" />
           </div>
         </section>
