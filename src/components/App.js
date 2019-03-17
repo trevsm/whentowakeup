@@ -9,10 +9,10 @@ function convertTime(date) {
   if (hh >= 12) {
     ampm = "PM";
   }
+  hh = hh % 12;
   if (hh == 0) {
     hh = 12;
   }
-  hh = hh % 12;
   return hh + ":" + ("0" + mm).slice(-2) + " " + ampm;
 }
 function addMinutes(date, minutes) {
