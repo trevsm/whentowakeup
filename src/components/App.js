@@ -30,19 +30,12 @@ class App extends Component {
     let count = 0;
     return (
       <>
-        <header className="logo">
-          <img src="../images/goodnight.svg" />
+        <header>
+          <Clock date={date} />
         </header>
         <section className="middle">
-          <Clock date={date} />
-          <p className="instruction">
-            If you go to sleep now, wake up at any of these times...
-          </p>
+          <img src="../images/sleepcycle.png" />
           <Timetable date={date} />
-          <div className="arrows">
-            <p>... Or these times for the best sleep</p>
-            <img src="../images/arrows.svg" />
-          </div>
         </section>
         <Contact />
       </>

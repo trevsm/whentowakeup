@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono:100,400|Inconsolata");
 
-$body-background: #dadada;
+$body-background: #191919;
 $goodnight-logo: #38f3bb;
 $instruction: #7f7f7fc4;
 
@@ -25,55 +25,21 @@ body {
 }
 
 .display-time,
-.instruction,
-.logo,
+.sleepcycle,
 .wake-times {
   margin: 0 auto;
 }
 
-.box-shadow {
-  box-shadow: 2px 2px 6px #37474f73;
-}
+/* ----------sleepcycle img------------------- */
 
-.box-shadow-inset {
-  box-shadow: inset 2px 2px 6px #37474f73;
-}
-
-/* ----------Goodnight Logo------------------- */
-
-.logo {
+.middle {
   width: 30vw;
-  min-width: 300px;
+  min-width: 350px;
   max-width: 400px;
-  margin-top: 30px;
+  margin: 0 auto;
+  margin-top: 15vh;
 
   img {
     width: 100%;
-  }
-}
-
-/* ------------Wake up at...-------------- */
-
-.instruction {
-  width: 280px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: $instruction;
-  font-size: 15pt;
-}
-
-.arrows {
-  display: flex;
-  width: 320px;
-  margin: 0 auto;
-
-  img {
-    width: 60%;
-    transform: translateY(-20px);
-  }
-
-  p {
-    width: 35%;
-    color: #7f7f7f;
   }
 }

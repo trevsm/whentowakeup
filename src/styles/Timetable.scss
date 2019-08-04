@@ -1,24 +1,20 @@
-$common-grid: #ff974f;
-$best-times: #f77a52;
+$sleep-cycle: "#8fd7f3", "#78cac3", "#8fca7c", "#fab070", "#f27f8c", "#aa86bd";
 
 /* ------Grid of possible wake times------ */
-
-.wake-times {
-  width: fit-content;
-
-  td {
-    padding: 5px;
+.middle {
+  margin-top: 40px;
+  .wake-times {
+    margin-top: 40px;
+    width: 100%;
+    td {
+      padding: 5px;
+    }
   }
 }
 
 .table-data {
+  font-size: 18px;
   min-width: 100px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: $common-grid;
+  padding: 10px 0;
   font-family: "Roboto Mono", monospace;
-}
-
-.best {
-  background-color: $best-times;
 }

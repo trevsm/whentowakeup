@@ -6,7 +6,7 @@ class Timetable extends Component {
   }
   render() {
     const { date } = this.props;
-    const grid = [[1, 2, 3], [4, 5, 6]];
+    const grid = [[1, 3, 5], [2, 4, 6]];
     return (
       <table className="wake-times">
         <tbody>
@@ -14,7 +14,7 @@ class Timetable extends Component {
             <tr key={row}>
               {row.map(cell => (
                 <td key={cell}>
-                  <div className={cell > 4 ? "table-data best" : "table-data"}>
+                  <div className={`table-data data-${cell} `}>
                     {convertTime(addMinutes(date, 90 * cell + 15))}
                   </div>
                 </td>
