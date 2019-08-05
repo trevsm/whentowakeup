@@ -27,13 +27,26 @@ $sleep-cycle: "#8fd7f3", "#78cac3", "#8fca7c", "#fab070", "#f27f8c", "#aa86bd";
     .data-6 {
       border-bottom: 2px solid #aa86bd;
     }
+    .sup {
+      font-size: 9pt;
+      color: #d0d0d0;
+      padding-bottom: 4px;
+      background-color: #191919;
+      width: 15px;
+      height: 15px;
+      transform: translateY(37px);
+      line-height: 1.1;
+      border-radius: 20px;
+      margin: 0 auto;
+    }
   }
 }
 
 .table-data {
+  align-items: center;
   font-size: 18px;
   margin: 0 10px;
-  padding: 10px 0;
+  padding: 5px 0;
   font-family: "Roboto Mono", monospace;
   color: #9c9c9c;
   font-weight: 400;

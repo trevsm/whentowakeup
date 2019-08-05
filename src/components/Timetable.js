@@ -15,6 +15,7 @@ class Timetable extends Component {
               {row.map(cell => (
                 <td key={cell}>
                   <div className={`table-data data-${cell} `}>
+                    <div className="sup">{`${cell} `}</div>
                     {convertTime(addMinutes(date, 90 * cell + 15))}
                   </div>
                 </td>
