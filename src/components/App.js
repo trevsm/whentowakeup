@@ -34,7 +34,7 @@ class App extends Component {
           <Clock date={date} />
         </header>
         <section className="middle">
-          <img src="../images/sleepcycle.png" />
+          <img src="../images/sleep-cycle.svg" />
           <Timetable date={date} />
         </section>
         <Contact />
