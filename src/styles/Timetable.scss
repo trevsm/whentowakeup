@@ -5,16 +5,36 @@ $sleep-cycle: "#8fd7f3", "#78cac3", "#8fca7c", "#fab070", "#f27f8c", "#aa86bd";
   margin-top: 40px;
   .wake-times {
     margin-top: 40px;
-    width: 100%;
+    width: fit-content;
     td {
       padding: 5px;
+    }
+    .data-1 {
+      border-bottom: 2px solid #8fd7f3;
+    }
+    .data-2 {
+      border-bottom: 2px solid #78cac3;
+    }
+    .data-3 {
+      border-bottom: 2px solid #8fca7c;
+    }
+    .data-4 {
+      border-bottom: 2px solid #fab070;
+    }
+    .data-5 {
+      border-bottom: 2px solid #f27f8c;
+    }
+    .data-6 {
+      border-bottom: 2px solid #aa86bd;
     }
   }
 }
 
 .table-data {
   font-size: 18px;
-  min-width: 100px;
+  margin: 0 10px;
   padding: 10px 0;
   font-family: "Roboto Mono", monospace;
+  color: #9c9c9c;
+  font-weight: 400;
 }

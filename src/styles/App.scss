@@ -37,9 +37,11 @@ body {
   min-width: 350px;
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 15vh;
+  margin-top: 25vh;
 
   img {
+    //transform: rotate(90deg) translateY(100px);
+    //width: 120vw;
     width: 100%;
   }
 }
