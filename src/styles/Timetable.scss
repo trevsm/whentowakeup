@@ -4,49 +4,16 @@ $sleep-cycle: "#8fd7f3", "#78cac3", "#8fca7c", "#fab070", "#f27f8c", "#aa86bd";
 .middle {
   margin-top: 40px;
   .wake-times {
-    margin-top: 40px;
-    width: fit-content;
-    td {
-      padding: 5px;
-    }
-    .data-1 {
-      border-bottom: 2px solid #8fd7f3;
-    }
-    .data-2 {
-      border-bottom: 2px solid #78cac3;
-    }
-    .data-3 {
-      border-bottom: 2px solid #8fca7c;
-    }
-    .data-4 {
-      border-bottom: 2px solid #fab070;
-    }
-    .data-5 {
-      border-bottom: 2px solid #f27f8c;
-    }
-    .data-6 {
-      border-bottom: 2px solid #aa86bd;
-    }
-    .sup {
-      font-size: 9pt;
-      color: #d0d0d0;
-      padding-bottom: 4px;
-      background-color: #191919;
-      width: 15px;
-      height: 15px;
-      transform: translateY(37px);
-      line-height: 1.1;
-      border-radius: 20px;
-      margin: 0 auto;
-    }
+    transform: translateX(-15px);
+    height: 500px;
+    margin-top: -28px;
+    text-align: center;
   }
 }
 
 .table-data {
-  align-items: center;
+  padding-top: 5px;
   font-size: 18px;
-  margin: 0 10px;
-  padding: 5px 0;
   font-family: "Roboto Mono", monospace;
   color: #9c9c9c;
   font-weight: 400;
