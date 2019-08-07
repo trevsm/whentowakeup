@@ -29,7 +29,7 @@ class App extends Component {
     let { date } = this.state;
     let count = 0;
     return (
-      <>
+      <div className="center">
         <header>
           <Clock date={date} />
         </header>
@@ -37,8 +37,10 @@ class App extends Component {
           <img src="../images/sleep-cycle.svg" />
           <Timetable date={date} />
         </section>
-        <Contact />
-      </>
+        <footer className="bottom">
+          <Contact />
+        </footer>
+      </div>
     );
   }
 }

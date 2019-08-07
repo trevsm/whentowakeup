@@ -1,12 +1,12 @@
 /* ------Contact------ */
+
 .contact {
-  width: 100px;
-  opacity: 0.1;
+  width: 150px;
+  margin: 10px auto;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
-  margin: 10px auto;
   img {
     width: 100%;
   }
@@ -15,4 +15,13 @@
       outline: none;
     }
   }
+}
+.bottom {
+  background-color: #191919;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
