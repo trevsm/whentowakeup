@@ -29,14 +29,18 @@ body {
 .wake-times {
   margin: 0 auto;
 }
-
+.header {
+  margin-top: 25px;
+  color: #b9b9b9;
+  font-family: sans-serif;
+}
 /* ----------sleepcycle img------------------- */
 
 .middle {
   background-color: #191919;
   width: 350px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 1vh;
   display: flex;
   position: absolute;
   top: 50%;

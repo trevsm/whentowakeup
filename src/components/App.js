@@ -3,6 +3,12 @@ import Contact from "./Contact";
 import Clock from "./Clock";
 import Timetable from "./Timetable";
 import "../styles/App.scss";
+import ReactGA from "react-ga";
+
+function initializeReactGA() {
+  ReactGA.initialize("UA-72583143-2");
+  ReactGA.pageview("/main");
+}
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +36,7 @@ class App extends Component {
     let count = 0;
     return (
       <div className="center">
-        <header>
+        <header className="header">
           <Clock date={date} />
         </header>
         <section className="middle">
