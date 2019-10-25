@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Contact from "./Contact";
 import Clock from "./Clock";
 import Timetable from "./Timetable";
+import Modal from "./Modal";
 import "../styles/App.scss";
 
 class App extends Component {
@@ -33,6 +34,9 @@ class App extends Component {
         <header>
           <Clock date={date} />
         </header>
+        <div>
+          <Modal />
+        </div>
         <section className="middle">
           <img src="../images/sleep-cycle.svg" />
           <Timetable date={date} />

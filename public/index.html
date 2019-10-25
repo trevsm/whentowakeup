@@ -13,9 +13,14 @@
     <title>When To Wake Up</title>
   </head>
 
-  <body>
+  <body onload="triggerModal();">
     <div id="root"></div>
     <script type="text/javascript" src="./scripts/time-functions.js"></script>
     <script type="text/javascript" src="./bundle.js"></script>
+    <script type="text/javascript">
+      function triggerModal() {
+        document.getElementsByClassName("transparent")[0].click();
+      }
+    </script>
   </body>
 </html>
