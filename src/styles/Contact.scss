@@ -1,7 +1,18 @@
 /* ------Contact------ */
-.bottom {
+footer.bottom {
   color: white;
-  padding: 10px 20px;
+  margin-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  div {
+    border-top: 1.5px solid #6c6c6c;
+    padding-top: 20px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
+  }
 }
 .fa {
   color: #ffffff52;

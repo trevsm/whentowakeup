@@ -16,9 +16,11 @@ class App extends Component {
     };
     this.tick = this.tick.bind(this);
   }
+
   componentDidMount() {
-    window.setInterval(this.tick, 50);
+    window.setInterval(this.tick, 100);
   }
+
   tick() {
     const { date } = this.state;
     const newDate = new Date();
@@ -26,18 +28,23 @@ class App extends Component {
       date: newDate
     });
   }
+
   render() {
     let { date } = this.state;
     let count = 0;
-    return (
-      <section className="middle">
-        <Clock date={date} />
 
-        <img src="../images/sleep-cycle.svg" />
-        <Timetable date={date} />
+    return (
+      <>
+        <Clock date={date} />
+        <section className="middle">
+          <div className="image">
+            <img src="../images/earth.svg" />
+          </div>
+          <Timetable date={date} />
+        </section>
         <Contact />
         <Modal />
-      </section>
+      </>
     );
   }
 }

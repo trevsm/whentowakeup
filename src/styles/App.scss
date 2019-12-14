@@ -22,10 +22,15 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: linear-gradient(rgba($g, $g, $g, $o), rgba($g, $g, $g, $o)),
     url(https://i.imgur.com/0X9bfZ0.gif);
   text-align: center;
   font-family: "Open Sans", sans-serif;
+  height: 100vh;
 }
 
 .display-time,
@@ -36,15 +41,23 @@ body {
 
 /* ----------sleepcycle img------------------- */
 
+.image {
+  width: 75%;
+  margin: 0 auto;
+  transform: translateY(-30px);
+  //transition: all 5s cubic-bezier(1, 1, 1, 1);
+}
+
 .middle {
   width: 100vw;
   max-width: 400px;
+  max-height: 380px;
+  height: 100vh;
   margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   img {
     width: 100%;
   }
