@@ -1,40 +1,40 @@
 $sleep-cycle: "#8fd7f3", "#78cac3", "#8fca7c", "#fab070", "#f27f8c", "#aa86bd";
 
 /* ------Grid of possible wake times------ */
-.middle {
-  margin-top: 40px;
-  .wake-times {
-    margin-top: 40px;
-    width: fit-content;
-    td {
-      padding: 5px;
-    }
-    .data-1 {
-      border-bottom: 2px solid #8fd7f3;
-    }
-    .data-2 {
-      border-bottom: 2px solid #78cac3;
-    }
-    .data-3 {
-      border-bottom: 2px solid #8fca7c;
-    }
-    .data-4 {
-      border-bottom: 2px solid #fab070;
-    }
-    .data-5 {
-      border-bottom: 2px solid #f27f8c;
-    }
-    .data-6 {
-      border-bottom: 2px solid #aa86bd;
-    }
+
+.wake-times {
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+    flex: 1 1 100px;
+  }
+  .data-1 {
+    border-bottom: 2px solid #8fd7f3;
+  }
+  .data-2 {
+    border-bottom: 2px solid #78cac3;
+  }
+  .data-3 {
+    border-bottom: 2px solid #8fca7c;
+  }
+  .data-4 {
+    border-bottom: 2px solid #fab070;
+  }
+  .data-5 {
+    border-bottom: 2px solid #f27f8c;
+  }
+  .data-6 {
+    border-bottom: 2px solid #aa86bd;
   }
 }
 
 .table-data {
+  display: inline-block;
   font-size: 18px;
-  margin: 0 10px;
+  margin-bottom: 10px;
   padding: 10px 0;
   font-family: "Roboto Mono", monospace;
   color: #9c9c9c;
   font-weight: 400;
+  width: fit-content;
 }

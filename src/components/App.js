@@ -30,19 +30,14 @@ class App extends Component {
     let { date } = this.state;
     let count = 0;
     return (
-      <>
-        <header>
-          <Clock date={date} />
-        </header>
-        <div>
-          <Modal />
-        </div>
-        <section className="middle">
-          <img src="../images/sleep-cycle.svg" />
-          <Timetable date={date} />
-        </section>
+      <section className="middle">
+        <Clock date={date} />
+
+        <img src="../images/sleep-cycle.svg" />
+        <Timetable date={date} />
         <Contact />
-      </>
+        <Modal />
+      </section>
     );
   }
 }

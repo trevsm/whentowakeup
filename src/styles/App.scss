@@ -4,6 +4,9 @@ $body-background: #191919;
 $goodnight-logo: #38f3bb;
 $instruction: #7f7f7fc4;
 
+$g: 39;
+$o: 0.98;
+
 // font-family: "Open Sans", sans-serif;
 
 // font-family: "Roboto Mono", monospace;
@@ -19,7 +22,8 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  background-color: $body-background;
+  background-image: linear-gradient(rgba($g, $g, $g, $o), rgba($g, $g, $g, $o)),
+    url(https://i.imgur.com/0X9bfZ0.gif);
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
@@ -33,15 +37,15 @@ body {
 /* ----------sleepcycle img------------------- */
 
 .middle {
-  width: 30vw;
-  min-width: 350px;
+  width: 100vw;
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 15vh;
-
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
   img {
-    //transform: rotate(90deg) translateY(100px);
-    //width: 120vw;
     width: 100%;
   }
 }
