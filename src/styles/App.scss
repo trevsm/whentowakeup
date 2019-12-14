@@ -44,14 +44,13 @@ body {
 .image {
   width: 75%;
   margin: 0 auto;
-  transform: translateY(-30px);
   //transition: all 5s cubic-bezier(1, 1, 1, 1);
 }
 
 .middle {
   width: 100vw;
   max-width: 400px;
-  max-height: 380px;
+  max-height: 500px;
   height: 100vh;
   margin: 0 auto;
   padding: 20px;
