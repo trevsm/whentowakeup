@@ -40,3 +40,14 @@ body {
   max-width: 350px;
   padding: 10px;
 }
+
+#help {
+  position: absolute;
+  top: 0;
+  left: 0;
+  a {
+    width: fit-content;
+    padding: 15px;
+    font-size: 30px;
+  }
+}

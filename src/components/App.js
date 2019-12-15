@@ -20,7 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     window.setInterval(this.tick, 100);
-    let help = document.getElementsByClassName("fa-question-circle-o")[0];
+    let help = document.getElementsByClassName("fa-info-circle")[0];
     let pop = document.getElementsByClassName("button")[0];
     help.addEventListener("click", () => {
       pop.click();
@@ -41,6 +41,9 @@ class App extends Component {
 
     return (
       <section className="middle">
+        <div id="help">
+          <a className="fa fa-info-circle"></a>
+        </div>
         <Modal />
         <Clock date={date} />
         <Earth />

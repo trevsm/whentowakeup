@@ -11,11 +11,15 @@ class Contact extends Component {
             target="_blank"
           ></a>
           <a
+            href="https://trevorjs.dev/"
+            className="fa fa-home"
+            target="_blank"
+          ></a>
+          <a
             href="https://www.linkedin.com/in/trevor-smith-27621613b/"
             className="fa fa-linkedin"
             target="_blank"
           ></a>
-          <a className="fa fa-question-circle-o" target="_blank"></a>
         </div>
       </div>
     );
