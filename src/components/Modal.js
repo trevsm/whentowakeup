@@ -2,6 +2,10 @@ import React from "react";
 import Popup from "reactjs-popup";
 import "../styles/Modal.scss";
 
+// font-family: 'Indie Flower', cursive;
+// font-family: 'Special Elite', cursive;
+// font-family: 'Lobster', cursive;
+
 export default () => (
   <Popup trigger={<button className="button transparent"></button>} modal>
     {close => (
@@ -18,7 +22,8 @@ export default () => (
           wake up at <span style={{ color: "#8fd7f3" }}> one </span> of the
           <span style={{ color: "#f27f8c" }}> six </span>
           following times to feel
-          <span style={{ color: "#aa86bd" }}> well rested</span> for the day.
+          <span style={{ color: "#aa86bd" }}> well rested </span>
+          for the day.
         </div>
       </div>
     )}
