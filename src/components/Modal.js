@@ -10,9 +10,15 @@ export default () => (
           &times;
         </a>
         <div className="content">
-          The average human takes 15 minutes to fall asleep. <br />
-          If you go to sleep <u>right now</u>, you should wake up at one of the
-          following times to feel well rested for the day.
+          The average human takes
+          <span style={{ color: "#fab070" }}> 15 minutes </span>
+          to fall asleep. <br />
+          If you go to sleep
+          <span style={{ color: "#8fca7c" }}> right now</span>,<br /> you should
+          wake up at <span style={{ color: "#8fd7f3" }}> one </span> of the
+          <span style={{ color: "#f27f8c" }}> six </span>
+          following times to feel
+          <span style={{ color: "#aa86bd" }}> well rested</span> for the day.
         </div>
       </div>
     )}

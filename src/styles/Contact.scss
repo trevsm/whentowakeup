@@ -1,17 +1,17 @@
 /* ------Contact------ */
-footer.bottom {
+.bottom {
   color: white;
-  margin-bottom: 50px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  transform: translateY(5vh);
+  text-align: center;
   div {
     border-top: 1.5px solid #6c6c6c;
-    padding-top: 20px;
+    padding: 15px 0;
     position: relative;
     margin: 0 auto;
     max-width: 300px;
+    a {
+      cursor: pointer;
+    }
   }
 }
 .fa {
@@ -19,5 +19,5 @@ footer.bottom {
   font-size: 25px;
   text-align: center;
   text-decoration: none;
-  width: 20%;
+  width: 15%;
 }

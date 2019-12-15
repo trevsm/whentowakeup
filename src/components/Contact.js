@@ -3,7 +3,7 @@ import "../styles/Contact.scss";
 class Contact extends Component {
   render() {
     return (
-      <footer className="bottom">
+      <div className="bottom">
         <div>
           <a
             href="https://github.com/Subtora"
@@ -15,23 +15,9 @@ class Contact extends Component {
             className="fa fa-linkedin"
             target="_blank"
           ></a>
-          <a
-            href="https://stackoverflow.com/users/8026620/subtora"
-            className="fa fa-stack-overflow"
-            target="_blank"
-          ></a>
-          <a
-            href="https://www.youtube.com/channel/UCbkqwGP9qHvKWp3iCEfLkXA"
-            className="fa fa-youtube"
-            target="_blank"
-          ></a>
-          <a
-            href="https://www.instagram.com/trev_sm/"
-            className="fa fa-instagram"
-            target="_blank"
-          ></a>
+          <a className="fa fa-question-circle-o" target="_blank"></a>
         </div>
-      </footer>
+      </div>
     );
   }
 }

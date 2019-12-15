@@ -3,6 +3,7 @@ import Contact from "./Contact";
 import Clock from "./Clock";
 import Timetable from "./Timetable";
 import Modal from "./Modal";
+import Earth from "./Earth";
 import "../styles/App.scss";
 
 class App extends Component {
@@ -19,6 +20,11 @@ class App extends Component {
 
   componentDidMount() {
     window.setInterval(this.tick, 100);
+    let help = document.getElementsByClassName("fa-question-circle-o")[0];
+    let pop = document.getElementsByClassName("button")[0];
+    help.addEventListener("click", () => {
+      pop.click();
+    });
   }
 
   tick() {
@@ -34,17 +40,13 @@ class App extends Component {
     let count = 0;
 
     return (
-      <>
-        <Clock date={date} />
-        <section className="middle">
-          <div className="image">
-            <img src="../images/earth.svg" />
-          </div>
-          <Timetable date={date} />
-        </section>
-        <Contact />
+      <section className="middle">
         <Modal />
-      </>
+        <Clock date={date} />
+        <Earth />
+        <Timetable date={date} />
+        <Contact />
+      </section>
     );
   }
 }

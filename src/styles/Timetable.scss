@@ -5,6 +5,8 @@ $sleep-cycle: "#8fd7f3", "#78cac3", "#8fca7c", "#fab070", "#f27f8c", "#aa86bd";
 .wake-times {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  margin: 3vh 0;
   > * {
     flex: 1 1 100px;
   }
