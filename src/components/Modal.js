@@ -23,7 +23,7 @@ export default () => (
           <span style={{ color: "#f27f8c" }}> six </span>
           following times to feel
           <span style={{ color: "#aa86bd" }}> well rested </span>
-          for the day.
+          for the day. <br />
         </div>
       </div>
     )}
