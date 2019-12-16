@@ -42,7 +42,7 @@ class Clock extends Component {
             {" "}
             here{" "}
           </span>
-          to edit
+          to edit time
         </div>
       </div>
     );

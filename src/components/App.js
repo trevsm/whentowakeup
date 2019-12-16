@@ -71,11 +71,14 @@ class App extends Component {
                 opacity: "0",
                 height: "70px",
                 width: "145px",
-                transform: "translateY(-100px)"
+                transform: "translateY(-100px)",
+                fontSize: "25px"
               }}
               onInput={() => {
                 let input = document.getElementById("CustomTime");
-                this.updateCustom(HHMMtoDate(input.value));
+                if (input.value) {
+                  this.updateCustom(HHMMtoDate(input.value));
+                }
               }}
             />
           </div>
