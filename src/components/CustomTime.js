@@ -13,10 +13,6 @@ class CustomTime extends Component {
       this.props.customDate(HHMMtoDate(input.value));
     }
   }
-  componentDidMount() {
-    runBtn = document.getElementById("runBtn");
-    resetBtn = document.getElementById("resetBtn");
-  }
   render() {
     return (
       <Popup
@@ -43,7 +39,6 @@ class CustomTime extends Component {
               >
                 run
               </button>
-              <button id="resetBtn">reset</button>
             </div>
           </div>
         )}

@@ -11,10 +11,6 @@ class Clock extends Component {
     col = document.getElementById("col");
     displayTime = document.getElementsByClassName("display-time")[0];
 
-    displayTime.addEventListener("click", () => {
-      document.getElementById("CustomTime").click();
-    });
-
     setInterval(() => {
       if (col.style.opacity == 1) {
         col.style.opacity = 0.4;

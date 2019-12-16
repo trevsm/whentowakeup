@@ -49,17 +49,42 @@ class App extends Component {
     let count = 0;
 
     return (
-      <section className="middle">
+      <>
         <div id="help">
           <a className="fa fa-info-circle"></a>
         </div>
-        <Modal />
-        <CustomTime customDate={this.updateCustom.bind(this)} />
-        <Clock date={date == custom ? date : custom} />
-        <Earth />
-        <Timetable date={date == custom ? date : custom} />
-        <Contact />
-      </section>
+        <section className="middle">
+          <Modal />
+          {/* <CustomTime customDate={this.updateCustom.bind(this)} /> */}
+          <Clock date={date == custom ? date : custom} />
+          <div
+            style={{
+              position: "absolute",
+              textAlign: "center",
+              width: "80vw",
+              maxWidth: "335px"
+            }}
+          >
+            <input
+              type="time"
+              id="CustomTime"
+              style={{
+                opacity: "0",
+                height: "45px",
+                width: "145px",
+                transform: "translateY(-90px)"
+              }}
+              onInput={() => {
+                let input = document.getElementById("CustomTime");
+                this.updateCustom(HHMMtoDate(input.value));
+              }}
+            />
+          </div>
+          <Earth />
+          <Timetable date={date == custom ? date : custom} />
+          <Contact />
+        </section>
+      </>
     );
   }
 }
