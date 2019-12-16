@@ -18,14 +18,31 @@ export default () => (
         </a>
         <div className="content">
           The average human takes
-          <span style={{ color: "#fab070" }}> 15 minutes </span>
+          <span className="draw" style={{ color: "#fab070" }}>
+            {" "}
+            15 minutes{" "}
+          </span>
           to fall asleep. <br />
           If you go to sleep
-          <span style={{ color: "#8fca7c" }}> right now</span>,<br /> you should
-          wake up at <span style={{ color: "#8fd7f3" }}> one </span> of the
-          <span style={{ color: "#f27f8c" }}> six </span>
+          <span className="draw" style={{ color: "#8fca7c" }}>
+            {" "}
+            right now
+          </span>
+          ,<br /> you should wake up at{" "}
+          <span className="draw" style={{ color: "#8fd7f3" }}>
+            {" "}
+            one{" "}
+          </span>{" "}
+          of the
+          <span className="draw" style={{ color: "#f27f8c" }}>
+            {" "}
+            six{" "}
+          </span>
           following times to feel
-          <span style={{ color: "#aa86bd" }}> well rested </span>
+          <span className="draw" style={{ color: "#aa86bd" }}>
+            {" "}
+            well rested{" "}
+          </span>
           for the day. <br />
         </div>
       </div>

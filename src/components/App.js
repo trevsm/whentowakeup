@@ -3,7 +3,6 @@ import Contact from "./Contact";
 import Clock from "./Clock";
 import Timetable from "./Timetable";
 import Modal from "./Modal";
-import CustomTime from "./CustomTime";
 import Earth from "./Earth";
 import "../styles/App.scss";
 
@@ -70,9 +69,9 @@ class App extends Component {
               id="CustomTime"
               style={{
                 opacity: "0",
-                height: "45px",
+                height: "70px",
                 width: "145px",
-                transform: "translateY(-90px)"
+                transform: "translateY(-100px)"
               }}
               onInput={() => {
                 let input = document.getElementById("CustomTime");

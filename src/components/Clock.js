@@ -30,6 +30,20 @@ class Clock extends Component {
           <span id="col">:</span>
           {time[1]}
         </h2>
+        <div id="changePrompt">
+          tap
+          <span
+            className="draw"
+            style={{
+              color: "#8fca7c",
+              fontSize: "15px"
+            }}
+          >
+            {" "}
+            here{" "}
+          </span>
+          to edit
+        </div>
       </div>
     );
   }
