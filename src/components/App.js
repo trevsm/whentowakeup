@@ -3,6 +3,7 @@ import Contact from "./Contact";
 import Clock from "./Clock";
 import Timetable from "./Timetable";
 import Modal from "./Modal";
+import CustomTime from "./CustomTime";
 import Earth from "./Earth";
 import "../styles/App.scss";
 
@@ -13,7 +14,8 @@ class App extends Component {
     //initialize new Date as current date
     let date = new Date();
     this.state = {
-      date
+      date: date,
+      custom: date
     };
     this.tick = this.tick.bind(this);
   }
@@ -21,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     window.setInterval(this.tick, 100);
     let help = document.getElementsByClassName("fa-info-circle")[0];
-    let pop = document.getElementsByClassName("button")[0];
+    let pop = document.getElementById("info");
     help.addEventListener("click", () => {
       pop.click();
     });
@@ -35,8 +37,15 @@ class App extends Component {
     });
   }
 
+  updateCustom(customDate) {
+    const { custom } = this.state;
+    this.setState({
+      custom: customDate
+    });
+  }
+
   render() {
-    let { date } = this.state;
+    let { date, custom } = this.state;
     let count = 0;
 
     return (
@@ -45,9 +54,10 @@ class App extends Component {
           <a className="fa fa-info-circle"></a>
         </div>
         <Modal />
-        <Clock date={date} />
+        <CustomTime customDate={this.updateCustom.bind(this)} />
+        <Clock date={date == custom ? date : custom} />
         <Earth />
-        <Timetable date={date} />
+        <Timetable date={date == custom ? date : custom} />
         <Contact />
       </section>
     );

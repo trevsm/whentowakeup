@@ -7,7 +7,10 @@ import "../styles/Modal.scss";
 // font-family: 'Lobster', cursive;
 
 export default () => (
-  <Popup trigger={<button className="button transparent"></button>} modal>
+  <Popup
+    trigger={<button id="info" className="button transparent"></button>}
+    modal
+  >
     {close => (
       <div className="modal">
         <a className="close" onClick={close}>

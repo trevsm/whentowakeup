@@ -12,7 +12,7 @@ class Timetable extends Component {
         {grid.map(id => (
           <div key={id}>
             <div key={id} className={`table-data data-${id} `}>
-              {convertTime(addMinutes(date, 90 * id + 15))}
+              {DatetoHHMM(addMinutes(date, 90 * id + 15))}
             </div>
           </div>
         ))}
