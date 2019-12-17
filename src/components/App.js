@@ -64,23 +64,26 @@ class App extends Component {
               maxWidth: "335px"
             }}
           >
-            <input
-              type="time"
-              id="CustomTime"
-              style={{
-                opacity: "0",
-                height: "70px",
-                width: "145px",
-                transform: "translateY(-100px)",
-                fontSize: "25px"
-              }}
-              onInput={() => {
-                let input = document.getElementById("CustomTime");
-                if (input.value) {
-                  this.updateCustom(HHMMtoDate(input.value));
-                }
-              }}
-            />
+            <label htmlFor="time">
+              <input
+                type="time"
+                id="CustomTime"
+                label="Custom-Time"
+                style={{
+                  opacity: "0",
+                  height: "70px",
+                  width: "145px",
+                  transform: "translateY(-100px)",
+                  fontSize: "25px"
+                }}
+                onInput={() => {
+                  let input = document.getElementById("CustomTime");
+                  if (input.value) {
+                    this.updateCustom(HHMMtoDate(input.value));
+                  }
+                }}
+              />
+            </label>
           </div>
           <Earth />
           <Timetable date={date == custom ? date : custom} />

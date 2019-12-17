@@ -19,6 +19,74 @@
       href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono:100,400|Inconsolata"
+    />
+    <style media="screen">
+      body {
+        background-image: linear-gradient(
+            rgba(39, 39, 39, 0.98),
+            rgba(39, 39, 39, 0.98)
+          ),
+          url(https://i.imgur.com/0X9bfZ0.gif);
+      }
+    </style>
+  </head>
+  <noscript>
+    <body>
+      <div
+        style="width: 80vw; max-width: 300px; margin: 0 auto; margin-top: 100px; "
+      >
+        <img src="./images/earth.svg" alt="animated earth" />
+        <h2
+          style="font-family: 'Open Sans'; color: white; font-weight: 100; font-size: 25px; text-align:left;"
+        >
+          <div>
+            <span
+              style="font-family:'Indie Flower', cursive; color: rgb(242, 127, 140);display: inline-block; transform: translateY(-2px); font-size:27px;"
+              >Hey</span
+            >
+            there!<br />
+          </div>
+          <div>
+            Looks like you have
+            <span
+              style="font-family:'Indie Flower', cursive; color: rgb(143, 215, 243); font-size:27px;  transform: translateY(-2px);"
+              >javascript</span
+            >
+            disabled . . .
+          </div>
+          <div>
+            Kinda
+            <span
+              style="font-family:'Indie Flower', cursive; color: rgb(143, 202, 124);display: inline-block; transform: translateY(-2px); font-size:27px;"
+              >stinks </span
+            >, but this
+            <span
+              style="font-family:'Indie Flower', cursive; color: rgb(250, 176, 112);display: inline-block; transform: translateY(-2px); font-size:27px;"
+              >page</span
+            >
+            doesn't
+            <span
+              style="font-family:'Indie Flower', cursive; color: rgb(170, 134, 189);display: inline-block; transform: translateY(-2px); font-size:27px;"
+              >work</span
+            >
+            without it.
+          </div>
+        </h2>
+      </div>
+    </body>
+  </noscript>
+  <body onload="triggerModal();">
+    <div id="root"></div>
+    <script type="text/javascript" src="./scripts/time-functions.js"></script>
+    <script type="text/javascript" src="./bundle.js"></script>
+    <script type="text/javascript">
+      function triggerModal() {
+        document.getElementById("info").click();
+      }
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -31,16 +99,6 @@
       }
       gtag("js", new Date());
       gtag("config", "UA-72583143-2");
-    </script>
-  </head>
-  <body onload="triggerModal();">
-    <div id="root"></div>
-    <script type="text/javascript" src="./scripts/time-functions.js"></script>
-    <script type="text/javascript" src="./bundle.js"></script>
-    <script type="text/javascript">
-      function triggerModal() {
-        document.getElementById("info").click();
-      }
     </script>
   </body>
 </html>
