@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Breakpoint, BreakpointProvider } from "react-socks";
 import Contact from "./Contact";
 import Clock from "./Clock";
 import Timetable from "./Timetable";
@@ -48,7 +49,7 @@ class App extends Component {
     let count = 0;
 
     return (
-      <>
+      <BreakpointProvider>
         <div id="help">
           <a className="fa fa-info-circle"></a>
         </div>
@@ -89,7 +90,7 @@ class App extends Component {
           <Timetable date={date == custom ? date : custom} />
           <Contact />
         </section>
-      </>
+      </BreakpointProvider>
     );
   }
 }

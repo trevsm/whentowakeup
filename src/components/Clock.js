@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Breakpoint, BreakpointProvider } from "react-socks";
 import "../styles/Clock.scss";
 
 let col, displayTime;
@@ -30,20 +31,22 @@ class Clock extends Component {
           <span id="col">:</span>
           {time[1]}
         </h2>
-        <div id="changePrompt">
-          tap
-          <span
-            className="draw"
-            style={{
-              color: "#8fca7c",
-              fontSize: "15px"
-            }}
-          >
-            {" "}
-            here{" "}
-          </span>
-          to edit time
-        </div>
+        <Breakpoint mobile>
+          <div id="changePrompt">
+            tap
+            <span
+              className="draw"
+              style={{
+                color: "#8fca7c",
+                fontSize: "15px"
+              }}
+            >
+              {" "}
+              here{" "}
+            </span>
+            to edit time
+          </div>
+        </Breakpoint>
       </div>
     );
   }
