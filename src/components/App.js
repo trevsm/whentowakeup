@@ -94,11 +94,11 @@ class App extends Component {
           <div
             style={{
               position: "absolute",
-              bottom: "0",
+              top: "0",
               left: "0",
               right: "0",
               padding: "10px 20px",
-              backgroundColor: "rgb(80 76 73)",
+              backgroundColor: "#383634",
               color: "#b7b7b7",
               borderRadius: "20px",
               margin: "10px auto",
