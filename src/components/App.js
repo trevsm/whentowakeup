@@ -15,7 +15,7 @@ class App extends Component {
     let date = new Date();
     this.state = {
       date: date,
-      custom: date
+      custom: date,
     };
     this.tick = this.tick.bind(this);
   }
@@ -33,14 +33,14 @@ class App extends Component {
     const { date } = this.state;
     const newDate = new Date();
     this.setState({
-      date: newDate
+      date: newDate,
     });
   }
 
   updateCustom(customDate) {
     const { custom } = this.state;
     this.setState({
-      custom: customDate
+      custom: customDate,
     });
   }
 
@@ -62,7 +62,7 @@ class App extends Component {
               position: "absolute",
               textAlign: "center",
               width: "80vw",
-              maxWidth: "335px"
+              maxWidth: "335px",
             }}
           >
             <label htmlFor="time">
@@ -75,7 +75,7 @@ class App extends Component {
                   height: "70px",
                   width: "145px",
                   transform: "translateY(-100px)",
-                  fontSize: "25px"
+                  fontSize: "25px",
                 }}
                 onInput={() => {
                   let input = document.getElementById("CustomTime");
@@ -90,6 +90,28 @@ class App extends Component {
           <Timetable date={date == custom ? date : custom} />
           <Contact />
         </section>
+        <a href="https://tastyspore.com/">
+          <div
+            style={{
+              position: "absolute",
+              bottom: "0",
+              left: "0",
+              right: "0",
+              padding: "10px 20px",
+              backgroundColor: "rgb(80 76 73)",
+              color: "#b7b7b7",
+              borderRadius: "20px",
+              margin: "10px auto",
+              fontSize: "15px",
+              width: "fit-content",
+              fontFamily: "system-ui",
+            }}
+          >
+            Interested in mushrooms? 🍄
+            <br />
+            Learn more @ tastyspore.com
+          </div>
+        </a>
       </BreakpointProvider>
     );
   }
