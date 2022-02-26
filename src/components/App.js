@@ -89,7 +89,7 @@ class App extends Component {
           <Timetable date={date == custom ? date : custom} />
           <Contact />
         </section>
-        <a href={github.projects.tastySpore}>
+        <a href={github.projects.tastySpore.live}>
           <div
             style={{
               position: "absolute",
