@@ -5,6 +5,7 @@ import Clock from "./Clock";
 import Timetable from "./Timetable";
 import Modal from "./Modal";
 import Earth from "./Earth";
+import { github } from "@trevsm/urls";
 import "../styles/App.scss";
 
 class App extends Component {
@@ -46,7 +47,6 @@ class App extends Component {
 
   render() {
     let { date, custom } = this.state;
-    let count = 0;
 
     return (
       <BreakpointProvider>
@@ -55,7 +55,6 @@ class App extends Component {
         </div>
         <section className="middle">
           <Modal />
-          {/* <CustomTime customDate={this.updateCustom.bind(this)} /> */}
           <Clock date={date == custom ? date : custom} />
           <div
             style={{
@@ -90,7 +89,7 @@ class App extends Component {
           <Timetable date={date == custom ? date : custom} />
           <Contact />
         </section>
-        <a href="https://tastyspore.com/">
+        <a href={github.projects.tastySpore}>
           <div
             style={{
               position: "absolute",

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Breakpoint, BreakpointProvider } from "react-socks";
+import { Breakpoint } from "react-socks";
+import { DatetoHHMM } from "./time-functions";
 import "../styles/Clock.scss";
 
 let col, displayTime;
@@ -38,7 +39,7 @@ class Clock extends Component {
               className="draw"
               style={{
                 color: "#8fca7c",
-                fontSize: "15px"
+                fontSize: "15px",
               }}
             >
               {" "}

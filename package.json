@@ -4,43 +4,45 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "bash copy.sh && webpack --mode production"
+    "start": "react-scripts start",
+    "build": "react-scripts build && cp CNAME build/",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Subtora/react-webpack-example.git"
+    "url": "git+https://github.com/trevsm/react-webpack-example.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Subtora/react-webpack-example/issues"
+    "url": "https://github.com/trevsm/react-webpack-example/issues"
   },
-  "homepage": "https://github.com/Subtora/react-webpack-example#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^2.1.1",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.13.1",
-    "react-socks": "^2.1.0",
-    "sass-loader": "^7.3.1",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "gh-pages": "^3.2.3"
   },
   "dependencies": {
-    "d3": "^5.15.1",
-    "jquery": "^3.5.0",
+    "@trevsm/urls": "^1.0.2",
     "node": "^11.15.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-router-dom": "^4.3.1",
-    "reactjs-popup": "^1.5.0"
+    "react-scripts": "^5.0.0",
+    "react-socks": "^2.2.0",
+    "reactjs-popup": "^1.5.0",
+    "sass-loader": "^7.3.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

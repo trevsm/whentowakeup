@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import * as urls from "@trevsm/urls";
 import "../styles/Contact.scss";
+
 class Contact extends Component {
   render() {
     return (
       <div className="bottom">
         <div>
           <a
-            href="https://github.com/Subtora"
+            href={urls.github.url}
             className="fa fa-github"
             target="_blank"
             rel="noreferrer"
@@ -15,14 +17,14 @@ class Contact extends Component {
               style={{
                 position: "absolute",
                 opacity: "0",
-                pointerEvents: "none"
+                pointerEvents: "none",
               }}
             >
               github
             </span>
           </a>
           <a
-            href="https://trevorjs.dev/"
+            href={urls.github.projects.portfolio.live}
             className="fa fa-home"
             target="_blank"
             rel="noreferrer"
@@ -31,14 +33,14 @@ class Contact extends Component {
               style={{
                 position: "absolute",
                 opacity: "0",
-                pointerEvents: "none"
+                pointerEvents: "none",
               }}
             >
               home
             </span>
           </a>
           <a
-            href="https://www.linkedin.com/in/trevor-smith-27621613b/"
+            href={urls.social.linkedin.url}
             className="fa fa-linkedin"
             target="_blank"
             rel="noreferrer"
@@ -47,7 +49,7 @@ class Contact extends Component {
               style={{
                 position: "absolute",
                 opacity: "0",
-                pointerEvents: "none"
+                pointerEvents: "none",
               }}
             >
               linkedin

@@ -1,4 +1,4 @@
-function DatetoHHMM(date) {
+export function DatetoHHMM(date) {
   let hh = date.getHours();
   let mm = date.getMinutes();
   let ampm = "AM";
@@ -12,13 +12,13 @@ function DatetoHHMM(date) {
   return hh + ":" + ("0" + mm).slice(-2) + ampm;
 }
 
-function addMinutes(date, minutes) {
+export function addMinutes(date, minutes) {
   const newDate = new Date(date);
   newDate.setMinutes(date.getMinutes() + minutes);
   return newDate;
 }
 
-function HHMMtoDate(hhmm) {
+export function HHMMtoDate(hhmm) {
   let time = hhmm.split(":");
   let newDate = new Date(2020, 0, 1, time[0], time[1]);
   return newDate;
