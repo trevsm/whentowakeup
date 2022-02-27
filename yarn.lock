@@ -1596,10 +1596,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@trevsm/urls@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@trevsm/urls/-/urls-1.0.2.tgz#8931c41bd68b973f8a857e1a3efbd9bb4e4a94d0"
-  integrity sha512-18xc6QUeNqSfU/q6Iz9WLe5lXiXQf1tzQ4LqjOfKWImouaHNM0v53NZJFVgky94W9ScjufD7/IMXPMAt9NZWfQ==
+"@trevsm/urls@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@trevsm/urls/-/urls-1.0.6.tgz#d68fbd394bc36ba1db9a0760be0acafd1cd3154d"
+  integrity sha512-lKAOmzaznVthwKgRq4Y4QU5iMISAnlpyn7LwHmlE3oRQXqwLPSU7eAGOHWQesIMajM7AIHYg7Lgq1rOJpWP5rg==
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
