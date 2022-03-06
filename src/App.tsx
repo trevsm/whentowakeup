@@ -15,13 +15,17 @@ import {
   Edge,
   Times,
   KaFi,
+  Emote,
 } from "./styles";
+import axios from "axios";
 
 function App() {
   const [date, setDate] = useState(new Date());
   const [timeInt, setTimeInt] = useState(null);
   const [doseOffDelay, setDoseOffDelay] = useLocalStorage("doseOffDelay", 15);
   const [theme, setTheme] = useLocalStorage("theme", "#5e72e4");
+  const [voted, setVoted] = useLocalStorage("voted", false);
+  const [hidden, setHidden] = useLocalStorage("hidden", false);
 
   const setNextDate = () => {
     const newDate = new Date();
@@ -70,6 +74,16 @@ function App() {
       );
     });
   }, [date, doseOffDelay, theme]);
+
+  const happy = (emote: boolean) => {
+    void axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/https://www.toptal.com/developers/postbin/1646557275401-8749332467559?happy=" +
+          emote
+      )
+      .catch(() => alert("Error submitting..."))
+      .then(() => setVoted(true));
+  };
 
   return (
     <>
@@ -131,6 +145,39 @@ function App() {
       >
         <Coffee />
       </KaFi>
+      {!hidden &&
+        (!voted ? (
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "15px",
+              marginBottom: 0,
+              marginTop: "30px",
+            }}
+          >
+            Enjoying the new version?{" "}
+            <Emote onClick={() => happy(true)}>😄</Emote>
+            <Emote onClick={() => happy(false)}>😞</Emote>
+          </p>
+        ) : (
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "15px",
+              marginBottom: 0,
+              marginTop: "30px",
+            }}
+          >
+            Thanks!{" "}
+            <Emote
+              onClick={() => setHidden(true)}
+              style={{ color: "white", fontSize: "15px", marginLeft: "10px" }}
+            >
+              {" "}
+              (hide){" "}
+            </Emote>
+          </p>
+        ))}
       <Contact />
       <br />
       <br />

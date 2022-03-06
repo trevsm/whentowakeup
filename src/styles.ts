@@ -77,3 +77,10 @@ export const KaFi = styled.a<{ theme: string }>`
   border-radius: 100%;
   box-shadow: 3px 3px 9px #00000070;
 `;
+
+export const Emote = styled.button`
+  background-color: unset;
+  font-size: 20px;
+  padding: 0;
+  border: 0;
+`;
