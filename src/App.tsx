@@ -26,6 +26,7 @@ function App() {
   const [theme, setTheme] = useLocalStorage("theme", "#5e72e4");
   const [voted, setVoted] = useLocalStorage("voted", false);
   const [hidden, setHidden] = useLocalStorage("hidden", false);
+  const [loading, setLoading] = useState(false);
 
   const setNextDate = () => {
     const newDate = new Date();
@@ -76,13 +77,14 @@ function App() {
   }, [date, doseOffDelay, theme]);
 
   const happy = (emote: boolean) => {
+    setLoading(true);
     void axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/https://eoicumpkrxpzfrr.m.pipedream.net?happy=" +
-          emote
-      )
+      .get("https://eoicumpkrxpzfrr.m.pipedream.net?happy=" + emote)
       .then(() => setVoted(true))
-      .catch(() => alert("Error submitting..."));
+      .catch(() => alert("Error submitting..."))
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -145,6 +147,20 @@ function App() {
       >
         <Coffee />
       </KaFi>
+      {loading && (
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "15px",
+            margin: 0,
+            position: "absolute",
+            left: 0,
+            right: 0,
+          }}
+        >
+          loading...
+        </div>
+      )}
       {!hidden &&
         (!voted ? (
           <p

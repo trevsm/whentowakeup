@@ -81,6 +81,7 @@ export const KaFi = styled.a<{ theme: string }>`
 export const Emote = styled.button`
   background-color: unset;
   font-size: 20px;
+  margin-left: 10px;
   padding: 0;
   border: 0;
 `;
