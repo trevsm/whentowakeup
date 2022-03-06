@@ -78,11 +78,11 @@ function App() {
   const happy = (emote: boolean) => {
     void axios
       .get(
-        "https://cors-anywhere.herokuapp.com/https://www.toptal.com/developers/postbin/1646557275401-8749332467559?happy=" +
+        "https://cors-anywhere.herokuapp.com/https://eoicumpkrxpzfrr.m.pipedream.net?happy=" +
           emote
       )
-      .catch(() => alert("Error submitting..."))
-      .then(() => setVoted(true));
+      .then(() => setVoted(true))
+      .catch(() => alert("Error submitting..."));
   };
 
   return (
