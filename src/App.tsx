@@ -89,6 +89,21 @@ function App() {
 
   return (
     <>
+      <a
+        href="https://trevsm.github.io/whentowakeup-v1/"
+        style={{ color: "white" }}
+      >
+        <p
+          style={{
+            opacity: ".2",
+            textAlign: "center",
+            width: "100%",
+            fontSize: "15px",
+          }}
+        >
+          Switch to old version?
+        </p>
+      </a>
       <h1 style={{ textAlign: "center", marginBottom: "40px" }}>
         Goodnight <Moon theme={theme} />
       </h1>
@@ -171,8 +186,7 @@ function App() {
               marginTop: "30px",
             }}
           >
-            Enjoying the new version?{" "}
-            <Emote onClick={() => happy(true)}>😄</Emote>
+            Enjoying the update? <Emote onClick={() => happy(true)}>😄</Emote>
             <Emote onClick={() => happy(false)}>😞</Emote>
           </p>
         ) : (
