@@ -159,6 +159,7 @@ function App() {
         href="https://ko-fi.com/trevsm"
         target="_blank"
         rel="nofollow noreferrer"
+        style={{ zIndex: 100 }}
       >
         <Coffee />
       </KaFi>
